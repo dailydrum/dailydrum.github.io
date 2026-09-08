@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "ios": {
+    "enabled": false,
+    "storeAvailable": false,
+    "minimumVersion": "2.3.6",
+    "minimumBuild": 29,
+    "latestVersion": "2.3.6",
+    "latestBuild": 29,
+    "message": "안정적인 연주를 위해 최신 버전으로 업데이트해 주세요."
+  },
+  "android": {
+    "enabled": false,
+    "storeAvailable": false,
+    "minimumVersion": "2.3.6",
+    "minimumBuild": 29,
+    "latestVersion": "2.3.6",
+    "latestBuild": 29,
+    "message": "안정적인 연주를 위해 최신 버전으로 업데이트해 주세요."
+  }
+}
