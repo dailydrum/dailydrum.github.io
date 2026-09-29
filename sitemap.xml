@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://tempo.dailydrum.co.kr/</loc><lastmod>2026-09-29</lastmod></url>
+<url><loc>https://tempo.dailydrum.co.kr/guide/</loc><lastmod>2026-09-29</lastmod></url>
+<url><loc>https://tempo.dailydrum.co.kr/guide/metronome-app/</loc><lastmod>2026-09-29</lastmod></url>
+<url><loc>https://tempo.dailydrum.co.kr/guide/metronome-practice/</loc><lastmod>2026-09-29</lastmod></url>
+<url><loc>https://tempo.dailydrum.co.kr/guide/bpm/</loc><lastmod>2026-09-29</lastmod></url>
+<url><loc>https://tempo.dailydrum.co.kr/guide/drum-metronome/</loc><lastmod>2026-09-29</lastmod></url>
+<url><loc>https://tempo.dailydrum.co.kr/guide/band-worship-metronome/</loc><lastmod>2026-09-29</lastmod></url>
 <url><loc>https://tempo.dailydrum.co.kr/privacy.html</loc><lastmod>2026-09-29</lastmod></url>
 <url><loc>https://tempo.dailydrum.co.kr/docs/TEMPO-2.4.0-guide-ko.pdf</loc><lastmod>2026-09-29</lastmod></url>
 <url><loc>https://tempo.dailydrum.co.kr/beaton/</loc><lastmod>2026-09-29</lastmod></url>
