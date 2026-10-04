@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>나나나 — 과거의 나를 피해라</title>
+<meta name="description" content="별을 먹을 때마다 방금의 내가 유령이 되어 따라온다. 과거의 나를 몇 명까지 피할 수 있을까? 설치 없이 바로 하는 무료 웹게임.">
+<meta name="theme-color" content="#f2f4f6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="나나나">
+<meta property="og:type" content="website">
+<meta property="og:title" content="나나나 — 과거의 나를 피해라">
+<meta property="og:description" content="내가 움직인 길이 유령이 되어 나를 쫓아온다. 너는 몇 명까지 피해?">
+<meta property="og:image" content="https://dailydrum.github.io/nanana/og.png">
+<meta property="og:url" content="https://dailydrum.github.io/nanana/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<script async data-ad-client="ca-pub-6160674200239283" data-ad-frequency-hint="45s" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" crossorigin="anonymous"></script>
+<script>window.adsbygoogle=window.adsbygoogle||[];var adBreak=adConfig=function(o){adsbygoogle.push(o);};</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;background:#f2f4f6;color:#191f28;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;-webkit-user-select:none;user-select:none;touch-action:none;overscroll-behavior:none}
+canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
+button{font:inherit;border:0;cursor:pointer;color:inherit;background:none}
+.ov{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;padding:calc(env(safe-area-inset-top) + 40px) 20px calc(env(safe-area-inset-bottom) + 20px)}
+.ov.on{display:flex}
+#hud{position:fixed;top:calc(env(safe-area-inset-top) + 18px);left:0;right:0;text-align:center;pointer-events:none;display:none}
+#score{font-size:52px;font-weight:900;letter-spacing:-2px;line-height:1;font-variant-numeric:tabular-nums}
+#hudSub{margin-top:6px;font-size:13px;font-weight:700;color:#8b95a1}
+#pop{position:fixed;left:16px;right:16px;top:44%;text-align:center;font-size:20px;font-weight:800;letter-spacing:-.5px;pointer-events:none;opacity:0;color:#191f28}
+#pop.go{animation:pop 2s ease-out}
+@keyframes pop{0%{opacity:0;transform:scale(.7)}8%{opacity:1;transform:scale(1.08)}14%{transform:scale(1)}80%{opacity:1}100%{opacity:0;transform:translateY(-12px)}}
+.logo{font-size:48px;font-weight:900;letter-spacing:-2px}
+.sub{margin-top:4px;font-size:16px;color:#4e5968;font-weight:700}
+.how{margin-top:14px;font-size:14px;line-height:1.6;color:#6b7684;text-align:center;font-weight:500}
+.how b{color:#3182f6}
+.stats{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;justify-content:center}
+.chip{padding:8px 12px;border-radius:999px;background:#fff;font-size:13px;font-weight:700;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.tap{margin-top:auto;font-size:17px;font-weight:800;color:#3182f6;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.35}}
+.row{display:flex;gap:8px;margin-top:16px}
+.ico{width:44px;height:44px;border-radius:14px;background:#fff;font-size:19px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.card{margin-top:auto;width:100%;max-width:400px;background:#fff;border-radius:24px;padding:24px 20px 16px;box-shadow:0 10px 40px rgba(0,0,0,.15);text-align:center}
+.big{font-size:56px;font-weight:900;letter-spacing:-2px;line-height:1.1}
+.lbl{font-size:14px;color:#8b95a1;font-weight:600}
+.killed{font-size:17px;font-weight:800;margin-top:2px}
+.badge{display:inline-block;margin-top:8px;padding:5px 10px;border-radius:999px;background:#fff1e6;color:#f0640a;font-size:13px;font-weight:800}
+.btn{display:block;width:100%;height:54px;border-radius:16px;font-size:17px;font-weight:700;margin-top:8px}
+.pri{background:#3182f6;color:#fff}
+.rew{background:#191f28;color:#fff;display:none}
+.sec{background:#f2f4f6;color:#4e5968}
+.two{display:flex;gap:8px}
+.two .btn{flex:1}
+.ad{width:100%;max-width:400px;margin-top:10px}
+#toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom) + 24px);transform:translateX(-50%);background:#191f28;color:#fff;padding:12px 18px;border-radius:14px;font-size:14px;font-weight:600;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap}
+#toast.on{opacity:1}
+.foot{margin-top:12px;font-size:11px;color:#8b95a1}
+.foot a{color:inherit}
+</style>
+</head>
+<body>
+<canvas id="cv"></canvas>
+
+<div id="hud"><div id="score">0</div><div id="hudSub"></div></div>
+<div id="pop"></div>
+
+<div id="title" class="ov on">
+  <div class="logo">나나나</div>
+  <div class="sub">과거의 나를 피해라</div>
+  <div class="how">드래그해서 <b>⭐</b>을 먹으면<br>방금 움직인 내가 <b>유령</b>이 되어 따라와요</div>
+  <div class="stats"><span class="chip" id="tBest"></span><span class="chip" id="tGoal"></span><span class="chip" id="tStreak"></span></div>
+  <div class="tap">화면을 눌러서 시작</div>
+  <div class="row">
+    <button class="ico" id="soundBtn" aria-label="소리"></button>
+    <button class="ico" id="vibBtn" aria-label="진동"></button>
+    <button class="ico" id="shareAppBtn" aria-label="공유">↗</button>
+  </div>
+  <div class="ad" id="adTitle"></div>
+  <div class="foot"><a href="privacy.html">개인정보처리방침</a></div>
+</div>
+
+<div id="over" class="ov">
+  <div class="card">
+    <div class="killed" id="oKilled"></div>
+    <div class="lbl" style="margin-top:10px">피한 과거의 나</div>
+    <div class="big"><span id="oScore">0</span><span style="font-size:28px">명</span></div>
+    <div id="oBadge"></div>
+    <div class="lbl" style="margin-top:8px" id="oBest"></div>
+    <div style="height:12px"></div>
+    <button class="btn rew" id="rewardBtn">▶ 광고 보고 그 녀석 지우고 계속</button>
+    <button class="btn pri" id="retryBtn">다시 하기</button>
+    <div class="two">
+      <button class="btn sec" id="shareBtn">친구한테 자랑</button>
+      <button class="btn sec" id="homeBtn">처음으로</button>
+    </div>
+  </div>
+  <div class="ad" id="adOver"></div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+'use strict';
+/* ================= 설정 ================= */
+const CFG = {
+  adClient: 'ca-pub-6160674200239283',
+  bannerSlot: '',          // AdSense 디스플레이 광고 단위 ID(숫자). 비워두면 배너 미노출
+  url: 'https://dailydrum.github.io/nanana/'
+};
+const $ = id => document.getElementById(id);
+
+/* ================= 저장 ================= */
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem('nanana.'+k); return v===null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem('nanana.'+k, JSON.stringify(v)); }catch(e){} }
+};
+let best = store.get('best', 0);
+let plays = store.get('plays', 0);
+let soundOn = store.get('sound', true);
+let vibOn = store.get('vib', true);
+let tutDone = store.get('tut', false);
+
+/* ================= 오늘의 목표·연속 ================= */
+function dayKey(d=new Date()){ return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate(); }
+function dailyGoal(){
+  let h = 11; for(const c of dayKey()) h = (h*31 + c.charCodeAt(0)) >>> 0;
+  return 8 + h % 13;                        // 8~20명
+}
+const GOAL = dailyGoal();
+let daily = store.get('daily', {last:'', streak:0});
+const yesterday = () => { const y = new Date(); y.setDate(y.getDate()-1); return dayKey(y); };
+function clearedToday(){ return daily.last === dayKey(); }
+function streakNow(){ return (daily.last === dayKey() || daily.last === yesterday()) ? daily.streak : 0; }
+function markDaily(){
+  if(clearedToday()) return false;
+  daily = { last: dayKey(), streak: daily.last === yesterday() ? daily.streak + 1 : 1 };
+  store.set('daily', daily); return true;
+}
+
+/* ================= 광고 ================= */
+let inAd = false, rewardShowFn = null;
+try{ adConfig({ preloadAdBreaks:'on', sound:'on' }); }catch(e){}
+// 전면 광고: 광고가 없거나 차단돼도 cb는 반드시 한 번 실행
+function withAd(name, cb){
+  let done = false, started = false;
+  const go = ()=>{ if(done) return; done = true; cb(); };
+  if(plays < 3){ go(); return; }            // 처음 몇 판은 광고 없이
+  try{
+    adBreak({ type:'next', name,
+      beforeAd(){ started = true; inAd = true; audioMute(true); },
+      afterAd(){ inAd = false; audioMute(false); },
+      adBreakDone(){ go(); }
+    });
+  }catch(e){}
+  setTimeout(()=>{ if(!started) go(); }, 900);
+}
+function prepareReward(){
+  rewardShowFn = null; $('rewardBtn').style.display = 'none';
+  if(continued || score < 3) return;
+  try{
+    adBreak({ type:'reward', name:'erase_ghost',
+      beforeAd(){ inAd = true; audioMute(true); },
+      afterAd(){ inAd = false; audioMute(false); },
+      beforeReward(showAdFn){ rewardShowFn = showAdFn; $('rewardBtn').style.display = 'block'; },
+      adDismissed(){},
+      adViewed(){ continueRun(); },
+      adBreakDone(){ if(!rewardShowFn) $('rewardBtn').style.display = 'none'; }
+    });
+  }catch(e){}
+}
+function mountBanners(){
+  if(!CFG.bannerSlot) return;
+  ['adTitle','adOver'].forEach(id=>{
+    const el = $(id); if(el.dataset.done) return; el.dataset.done = 1;
+    el.innerHTML = `<ins class="adsbygoogle" style="display:block" data-ad-client="${CFG.adClient}" data-ad-slot="${CFG.bannerSlot}" data-ad-format="horizontal" data-full-width-responsive="true"></ins>`;
+    try{ (adsbygoogle = window.adsbygoogle || []).push({}); }catch(e){}
+  });
+}
+
+/* ================= 소리·진동 ================= */
+let AC = null, master = null;
+function audioInit(){
+  if(AC){ if(AC.state === 'suspended') AC.resume(); return; }
+  try{ AC = new (window.AudioContext||window.webkitAudioContext)(); master = AC.createGain(); master.gain.value = soundOn ? .45 : 0; master.connect(AC.destination); }catch(e){}
+}
+function audioMute(m){ if(master) master.gain.value = (!m && soundOn) ? .45 : 0; }
+function tone(f, d=.12, type='sine', v=.3, slide=0, delay=0){
+  if(!AC || !soundOn) return;
+  const t = AC.currentTime + delay, o = AC.createOscillator(), g = AC.createGain();
+  o.type = type; o.frequency.setValueAtTime(f, t);
+  if(slide) o.frequency.exponentialRampToValueAtTime(Math.max(40, f+slide), t+d);
+  g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(.001, t+d);
+  o.connect(g); g.connect(master); o.start(t); o.stop(t+d+.02);
+}
+const PENTA = [0,2,4,7,9];
+const note = n => 440 * Math.pow(2, ((Math.floor(n/5)*12 + PENTA[n%5]) - 9) / 12);
+const sfx = {
+  coin(n){ const f = note(Math.min(n, 18) + 3); tone(f, .18, 'sine', .3); tone(f*1.5, .14, 'sine', .12, 0, .06); },
+  ghost(){ tone(300, .35, 'sine', .08, -180, .12); },
+  die(){ tone(260, .6, 'sawtooth', .14, -200); tone(90, .4, 'square', .1, -40); },
+  goal(){ [0,2,4,7].forEach((n,k)=> tone(note(n+10), .2, 'sine', .25, 0, k*.09)); },
+  tick(){ tone(880, .04, 'square', .05); }
+};
+function buzz(p){ if(vibOn && navigator.vibrate) try{ navigator.vibrate(p); }catch(e){} }
+
+/* ================= 화면 ================= */
+const cv = $('cv'), ctx = cv.getContext('2d');
+const AW = 360, AH = 520;                   // 경기장(월드) 크기
+let W = 0, H = 0, DPR = 1, K = 1, AX = 0, AY = 0;
+function resize(){
+  DPR = Math.min(window.devicePixelRatio || 1, 2);
+  W = innerWidth; H = innerHeight;
+  cv.width = W*DPR; cv.height = H*DPR;
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+  const top = 108, bot = 20;
+  K = Math.min((W-24)/AW, (H-top-bot)/AH);
+  AX = (W - AW*K)/2; AY = top + ((H-top-bot) - AH*K)/2;
+}
+addEventListener('resize', resize);
+
+/* ================= 게임 ================= */
+const R = 13, CR = 12, ROUND = 6, GRACE = .9, FADE = .35, PAUSE = .5;
+let px, py, pvx = 0, pvy = 0, ghosts, path, rt, coin, score, continued, state = 'title';
+let inv = 0, slow = 1, shake = 0, killer = -1, dieT = 0, parts = [], goalHit = false, lastTick = 0;
+
+function reset(){
+  px = AW/2; py = AH*0.62; ghosts = []; path = []; rt = 0;
+  score = 0; continued = false; killer = -1; parts = []; goalHit = false; slow = 1; shake = 0;
+  placeCoin();
+}
+function placeCoin(){
+  let pick = null, bd = -1;
+  for(let k=0;k<40;k++){
+    const c = { x: 34 + Math.random()*(AW-68), y: 34 + Math.random()*(AH-68) };
+    let d = Math.hypot(c.x-px, c.y-py);
+    if(d < 150) d -= 1000;
+    for(const g of ghosts){ const s = g.path[0]; d = Math.min(d, Math.hypot(c.x-s[1], c.y-s[2]) * 3); }
+    if(d > bd){ bd = d; pick = c; }
+  }
+  coin = pick;
+}
+function startRun(){
+  audioInit();
+  reset(); plays++; store.set('plays', plays);
+  hide('title'); hide('over'); $('hud').style.display = 'block';
+  state = 'play'; newRound(); updateHud();
+  if(!tutDone) popText('아무 데나 드래그해서 ⭐을 먹어!');
+}
+function newRound(){
+  rt = 0; inv = GRACE; path = [[0, px, py]];
+}
+function grabCoin(){
+  // 방금 판의 움직임이 유령이 됨
+  path.push([rt, px, py]);
+  ghosts.push({ path, dur: rt, n: ghosts.length + 1 });
+  score++;
+  burst(coin.x, coin.y, '#ffc342', 14);
+  sfx.coin(score); setTimeout(()=>sfx.ghost(), 60); buzz(15);
+  if(!tutDone){
+    if(score === 1) popText('방금의 내가 유령이 됐어! 👻\n닿으면 끝, 피해!');
+    if(score >= 3){ tutDone = true; store.set('tut', true); }
+  }
+  if(!goalHit && score >= GOAL){
+    goalHit = true;
+    if(markDaily()){ popText(`오늘의 목표 달성! 🔥 ${daily.streak}일 연속`); setTimeout(()=>sfx.goal(), 150); buzz([30,40,30]); }
+  }
+  placeCoin(); newRound(); updateHud();
+}
+function die(k){
+  if(state !== 'play') return;
+  state = 'dying'; killer = k; dieT = 0; slow = .2; shake = 14;
+  burst(px, py, '#3182f6', 22);
+  sfx.die(); buzz([50,40,80]);
+}
+function finishDeath(){
+  const prevBest = best;
+  if(score > best){ best = score; store.set('best', best); }
+  state = 'over'; $('hud').style.display = 'none';
+  $('oKilled').textContent = killer < 0 ? '⏰ 시간 초과!' : `👻 ${ghosts[killer].n}번째 판의 나한테 잡힘`;
+  $('oScore').textContent = score;
+  $('oBest').textContent = `최고 기록 ${best}명`;
+  let b = '';
+  if(score > prevBest && prevBest > 0) b += '<span class="badge">🏆 신기록!</span> ';
+  if(goalHit && clearedToday()) b += `<span class="badge" style="background:#e8f3ff;color:#3182f6">🔥 ${daily.streak}일 연속 목표 달성</span>`;
+  else if(!clearedToday()) b += `<span class="badge" style="background:#f2f4f6;color:#4e5968">오늘의 목표까지 ${GOAL - score}명</span>`;
+  $('oBadge').innerHTML = b;
+  $('rewardBtn').textContent = killer < 0 ? '▶ 광고 보고 시간 다시 받기' : `▶ 광고 보고 ${ghosts[killer].n}번째 나 지우고 계속`;
+  show('over'); prepareReward();
+}
+function continueRun(){
+  if(killer >= 0) ghosts.splice(killer, 1);
+  continued = true; killer = -1; slow = 1;
+  hide('over'); $('hud').style.display = 'block';
+  state = 'play'; newRound(); popText('다시 간다!');
+}
+function toTitle(){
+  reset(); state = 'title'; $('hud').style.display = 'none';
+  hide('over'); renderTitle(); show('title');
+}
+function updateHud(){
+  $('score').textContent = score;
+  $('hudSub').textContent = clearedToday() ? `피한 과거의 나 · 최고 ${Math.max(best, score)}명` : `피한 과거의 나 · 오늘 목표 ${GOAL}명`;
+}
+function popText(t){
+  const el = $('pop'); el.innerHTML = t.replace(/\n/g, '<br>');
+  el.classList.remove('go'); void el.offsetWidth; el.classList.add('go');
+}
+function burst(x, y, color, n){
+  for(let i=0;i<n;i++){
+    const a = Math.random()*Math.PI*2, s = 60 + Math.random()*160;
+    parts.push({ x, y, vx:Math.cos(a)*s, vy:Math.sin(a)*s, t:0, life:.4+Math.random()*.4, color, r:2+Math.random()*3 });
+  }
+}
+
+/* 유령 위치: 판이 시작될 때마다 모든 유령이 자기 경로를 처음부터 다시 재생 */
+function ghostAt(g, t){
+  const per = g.dur + PAUSE, lt = t % per;
+  let a = 1, idx;
+  const P = g.path;
+  if(lt >= g.dur){ idx = P.length - 1; a = 1 - (lt - g.dur)/PAUSE; }
+  else {
+    if(lt < FADE) a = lt / FADE;
+    let lo = 0, hi = P.length - 1;
+    while(lo < hi){ const m = (lo+hi+1) >> 1; if(P[m][0] <= lt) lo = m; else hi = m - 1; }
+    idx = lo;
+    if(idx < P.length - 1){
+      const p0 = P[idx], p1 = P[idx+1], f = (lt - p0[0]) / Math.max(1e-6, p1[0]-p0[0]);
+      const j = Math.max(0, idx-3), q = P[j];
+      return { x:p0[1]+(p1[1]-p0[1])*f, y:p0[2]+(p1[2]-p0[2])*f, a, vx:p1[1]-q[1], vy:p1[2]-q[2], lt };
+    }
+  }
+  const p = P[idx], q = P[Math.max(0, idx-3)];
+  return { x:p[1], y:p[2], a, vx:p[1]-q[1], vy:p[2]-q[2], lt };
+}
+
+/* ================= 입력 (손가락 아래가 가리지 않게 상대 드래그) ================= */
+let dragId = null, lx = 0, ly = 0;
+const SENS = 1.25;
+cv.addEventListener('pointerdown', e => {
+  e.preventDefault();
+  if(dragId !== null) return;
+  dragId = e.pointerId; lx = e.clientX; ly = e.clientY;
+  try{ cv.setPointerCapture(e.pointerId); }catch(_){}
+});
+cv.addEventListener('pointermove', e => {
+  if(e.pointerId !== dragId) return;
+  const dx = (e.clientX - lx)/K*SENS, dy = (e.clientY - ly)/K*SENS;
+  lx = e.clientX; ly = e.clientY;
+  if(state !== 'play') return;
+  px = Math.max(R, Math.min(AW-R, px + dx));
+  py = Math.max(R, Math.min(AH-R, py + dy));
+});
+const endDrag = e => { if(e.pointerId === dragId) dragId = null; };
+cv.addEventListener('pointerup', endDrag);
+cv.addEventListener('pointercancel', endDrag);
+const keys = {};
+addEventListener('keydown', e => {
+  keys[e.key] = true;
+  if((e.code === 'Space' || e.code === 'Enter') && state === 'title'){ e.preventDefault(); startRun(); }
+});
+addEventListener('keyup', e => { keys[e.key] = false; });
+
+/* ================= 루프 ================= */
+let lastT = 0;
+function loop(t){
+  const real = Math.min(.05, (t - lastT)/1000 || 0); lastT = t;
+  if(!inAd) update(real);
+  draw();
+  requestAnimationFrame(loop);
+}
+function update(real){
+  const dt = real * slow;
+  if(state === 'title'){ rt += dt; }
+  if(state === 'play'){
+    const kx = (keys.ArrowRight||keys.d?1:0) - (keys.ArrowLeft||keys.a?1:0);
+    const ky = (keys.ArrowDown||keys.s?1:0) - (keys.ArrowUp||keys.w?1:0);
+    if(kx || ky){ const l = Math.hypot(kx, ky); px = Math.max(R, Math.min(AW-R, px + kx/l*240*dt)); py = Math.max(R, Math.min(AH-R, py + ky/l*240*dt)); }
+    rt += dt; inv -= dt;
+    const last = path[path.length-1];
+    pvx = px - last[1]; pvy = py - last[2];
+    if(pvx || pvy || rt - last[0] > .1) path.push([rt, px, py]);
+    if(Math.hypot(coin.x-px, coin.y-py) < R + CR){ grabCoin(); }
+    else if(inv <= 0){
+      for(let i=0;i<ghosts.length;i++){
+        const g = ghostAt(ghosts[i], rt);
+        if(g.a > .6 && Math.hypot(g.x-px, g.y-py) < R*2 - 7){ die(i); break; }
+      }
+    }
+    const left = ROUND - rt;
+    if(state === 'play' && left < 2 && Math.ceil(left*2) !== lastTick){ lastTick = Math.ceil(left*2); sfx.tick(); }
+    if(state === 'play' && left <= 0) die(-1);
+  }
+  if(state === 'dying'){
+    dieT += real;
+    if(dieT > .9) finishDeath();
+  }
+  for(const p of parts){ p.t += real; p.x += p.vx*real; p.y += p.vy*real; p.vx *= .92; p.vy *= .92; }
+  parts = parts.filter(p => p.t < p.life);
+  shake *= Math.pow(.02, real);
+}
+
+/* ================= 그리기 ================= */
+const S = (x, y) => [AX + x*K, AY + y*K];
+function blob(x, y, r, body, alpha, vx, vy, look){
+  const [sx, sy] = S(x, y), rr = r*K;
+  ctx.globalAlpha = alpha;
+  ctx.fillStyle = body; ctx.beginPath(); ctx.arc(sx, sy, rr, 0, Math.PI*2); ctx.fill();
+  let l = Math.hypot(vx, vy), ex = 0, ey = .25;
+  if(l > .3){ ex = vx/l; ey = vy/l; }
+  const ox = ex*rr*.28, oy = ey*rr*.28;
+  for(const s of [-1, 1]){
+    const cx = sx + s*rr*.36 + ox, cy = sy - rr*.12 + oy;
+    ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(cx, cy, rr*.3, 0, Math.PI*2); ctx.fill();
+    ctx.fillStyle = look; ctx.beginPath(); ctx.arc(cx + ex*rr*.12, cy + ey*rr*.12, rr*.15, 0, Math.PI*2); ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+}
+function star(x, y, r, rot){
+  const [sx, sy] = S(x, y), rr = r*K;
+  ctx.save(); ctx.translate(sx, sy); ctx.rotate(rot);
+  ctx.fillStyle = '#ffc342'; ctx.beginPath();
+  for(let i=0;i<10;i++){ const a = i*Math.PI/5 - Math.PI/2, d = i%2 ? rr*.48 : rr*1.15; ctx.lineTo(Math.cos(a)*d, Math.sin(a)*d); }
+  ctx.closePath(); ctx.fill(); ctx.restore();
+}
+function rrect(x, y, w, h, r){ ctx.beginPath(); ctx.moveTo(x+r, y); ctx.arcTo(x+w, y, x+w, y+h, r); ctx.arcTo(x+w, y+h, x, y+h, r); ctx.arcTo(x, y+h, x, y, r); ctx.arcTo(x, y, x+w, y, r); ctx.closePath(); }
+const now = () => performance.now()/1000;
+function draw(){
+  ctx.fillStyle = '#f2f4f6'; ctx.fillRect(0, 0, W, H);
+  ctx.save();
+  if(shake > .3) ctx.translate((Math.random()-.5)*shake, (Math.random()-.5)*shake);
+  // 경기장
+  ctx.fillStyle = '#fff'; rrect(AX, AY, AW*K, AH*K, 22); ctx.fill();
+  ctx.save(); rrect(AX, AY, AW*K, AH*K, 22); ctx.clip();
+  if(state === 'title'){ drawDemo(); ctx.restore(); ctx.restore(); return; }
+  if(!ghosts){ ctx.restore(); ctx.restore(); return; }
+  // 남은 시간 바
+  const left = Math.max(0, 1 - rt/ROUND);
+  ctx.fillStyle = left < .34 ? '#f04452' : '#e5e8eb';
+  ctx.fillRect(AX, AY, AW*K*left, 5);
+  // 유령들이 갈 길(희미하게 미리 보여줌)
+  ctx.lineWidth = 2; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  for(const g of ghosts){
+    ctx.strokeStyle = 'rgba(139,92,246,.10)'; ctx.beginPath();
+    for(let i=0;i<g.path.length;i+=2){ const [sx, sy] = S(g.path[i][1], g.path[i][2]); i ? ctx.lineTo(sx, sy) : ctx.moveTo(sx, sy); }
+    ctx.stroke();
+  }
+  // 별
+  if(coin && state === 'play') star(coin.x, coin.y, CR, Math.sin(now()*3)*.25);
+  // 유령
+  ghosts.forEach((g, i) => {
+    const p = ghostAt(g, rt);
+    const hit = state !== 'play' && i === killer;
+    blob(p.x, p.y, R, hit ? '#f04452' : '#a78bfa', Math.max(0, p.a) * (hit ? 1 : .75), p.vx, p.vy, '#4c1d95');
+    if(p.a > .2 && ghosts.length < 40){
+      const [sx, sy] = S(p.x, p.y);
+      ctx.fillStyle = 'rgba(76,29,149,.55)'; ctx.font = `700 ${Math.round(9*K)}px -apple-system,sans-serif`; ctx.textAlign = 'center';
+      ctx.fillText(g.n, sx, sy + R*K + 10*K);
+    }
+  });
+  // 나
+  if(state === 'play' || state === 'dying'){
+    const blink = inv > 0 && Math.floor(now()*12) % 2 === 0;
+    if(state === 'play') blob(px, py, R, '#3182f6', blink ? .35 : 1, pvx, pvy, '#191f28');
+  }
+  for(const p of parts){
+    const [sx, sy] = S(p.x, p.y);
+    ctx.globalAlpha = 1 - p.t/p.life; ctx.fillStyle = p.color;
+    ctx.beginPath(); ctx.arc(sx, sy, p.r*K, 0, Math.PI*2); ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  ctx.restore(); ctx.restore();
+}
+// 타이틀 뒤에서 유령들이 돌아다니는 데모
+function drawDemo(){
+  const t = rt;
+  for(let i=0;i<5;i++){
+    const a = t*(.5 + i*.13) + i*1.7, b = t*(.37 + i*.11) + i;
+    const x = AW/2 + Math.sin(a)*AW*.36, y = AH*.55 + Math.sin(b)*AH*.3;
+    const vx = Math.cos(a), vy = Math.cos(b);
+    blob(x, y, R, '#a78bfa', .5, vx, vy, '#4c1d95');
+  }
+  const x = AW/2 + Math.sin(t*.8)*AW*.2, y = AH*.62 + Math.cos(t*1.1)*AH*.12;
+  blob(x, y, R, '#3182f6', 1, Math.cos(t*.8), -Math.sin(t*1.1), '#191f28');
+  star(AW/2 + Math.sin(t*.8 + 1)*AW*.2, AH*.62 + Math.cos(t*1.1 + 1)*AH*.12, CR, Math.sin(t*3)*.25);
+}
+
+/* ================= UI ================= */
+function show(id){ $(id).classList.add('on'); }
+function hide(id){ $(id).classList.remove('on'); }
+let toastT;
+function toast(m){ const el = $('toast'); el.textContent = m; el.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(()=>el.classList.remove('on'), 2200); }
+function renderTitle(){
+  $('tBest').textContent = `🏆 최고 ${best}명`;
+  $('tGoal').textContent = clearedToday() ? `✅ 오늘 목표 ${GOAL}명` : `🎯 오늘 목표 ${GOAL}명`;
+  const st = streakNow();
+  $('tStreak').style.display = st ? '' : 'none';
+  $('tStreak').textContent = `🔥 ${st}일 연속`;
+  $('soundBtn').textContent = soundOn ? '🔊' : '🔇';
+  $('vibBtn').textContent = vibOn ? '📳' : '📴';
+}
+['soundBtn','vibBtn','shareAppBtn'].forEach(id => $(id).addEventListener('pointerdown', e => e.stopPropagation()));
+$('soundBtn').onclick = ()=>{ soundOn = !soundOn; store.set('sound', soundOn); audioInit(); audioMute(false); renderTitle(); sfx.coin(3); };
+$('vibBtn').onclick = ()=>{ vibOn = !vibOn; store.set('vib', vibOn); renderTitle(); buzz(30); };
+$('title').addEventListener('pointerdown', e => { if(e.target.closest('a')) return; startRun(); });
+$('retryBtn').onclick = ()=> withAd('retry', startRun);
+$('homeBtn').onclick = ()=> withAd('home', toTitle);
+$('rewardBtn').onclick = ()=>{ if(rewardShowFn){ const f = rewardShowFn; rewardShowFn = null; $('rewardBtn').style.display = 'none'; f(); } };
+async function share(text){
+  try{
+    if(navigator.share){ await navigator.share({ title:'나나나', text, url:CFG.url }); return; }
+    await navigator.clipboard.writeText(text + ' ' + CFG.url); toast('링크를 복사했어요. 친구한테 붙여넣기!');
+  }catch(e){}
+}
+$('shareBtn').onclick = ()=> share(killer < 0
+  ? `나나나에서 과거의 나 ${score}명 피하다 시간 초과 ⏰ 너는 몇 명?`
+  : `나나나에서 과거의 나 ${score}명 피하다가 ${ghosts[killer] ? ghosts[killer].n : ''}번째 나한테 잡힘 👻 너는 몇 명까지 가능?`);
+$('shareAppBtn').onclick = ()=> share(`내가 움직인 길이 유령이 돼서 쫓아오는 게임 나나나 👻 (내 최고 ${best}명)`);
+document.addEventListener('visibilitychange', ()=>{ if(document.hidden && AC) AC.suspend(); else if(AC) AC.resume(); });
+
+resize();
+reset(); rt = 0;
+renderTitle();
+requestAnimationFrame(t => { lastT = t; loop(t); });
+mountBanners();
+if('serviceWorker' in navigator) addEventListener('load', ()=> navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+</script>
+</body>
+</html>
