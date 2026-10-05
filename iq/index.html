@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>IQ 빈칸 — 무료 IQ 테스트 · 빈칸 추리 두뇌 퍼즐</title>
+<meta name="description" content="3×3 그림의 규칙을 찾아 빈칸을 채우는 지능검사형 추리 퍼즐. 20문항 IQ 테스트, 매일 바뀌는 오늘의 퍼즐, 해설로 배우는 무한 도전. 설치 없이 무료.">
+<meta name="theme-color" content="#f2f4f6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="IQ 빈칸">
+<meta property="og:type" content="website">
+<meta property="og:title" content="IQ 빈칸 — 빈칸에 들어갈 그림은?">
+<meta property="og:description" content="20문항으로 알아보는 내 IQ 추정치. 너는 상위 몇 %야?">
+<meta property="og:image" content="https://dailydrum.github.io/iq/og.png">
+<meta property="og:url" content="https://dailydrum.github.io/iq/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://dailydrum.github.io/iq/">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<script async data-ad-client="ca-pub-6160674200239283" data-ad-frequency-hint="45s" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" crossorigin="anonymous"></script>
+<script>window.adsbygoogle=window.adsbygoogle||[];var adBreak=adConfig=function(o){adsbygoogle.push(o);};</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;background:#f2f4f6;color:#191f28;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;-webkit-user-select:none;user-select:none;touch-action:manipulation;overscroll-behavior:none}
+button{font:inherit;border:0;cursor:pointer;color:inherit;background:none}
+.scr{position:fixed;inset:0;overflow-y:auto;display:none;-webkit-overflow-scrolling:touch}
+.scr.on{display:block}
+.wrap{max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top) + 16px) 16px calc(env(safe-area-inset-bottom) + 24px);min-height:100%;display:flex;flex-direction:column}
+.center{align-items:center;text-align:center}
+
+/* 홈 */
+.logo{margin-top:20px;font-size:44px;font-weight:900;letter-spacing:-2px}
+.logo b{color:#3182f6}
+.sub{margin-top:2px;font-size:16px;color:#4e5968;font-weight:700}
+.demo{margin:20px 0 6px;width:180px}
+.modes{width:100%;margin-top:14px;display:flex;flex-direction:column;gap:10px}
+.mode{display:flex;align-items:center;gap:14px;width:100%;padding:16px 18px;border-radius:20px;background:#fff;text-align:left;box-shadow:0 1px 4px rgba(0,0,0,.05);transition:transform .1s}
+.mode:active{transform:scale(.98)}
+.mode .em{font-size:28px;width:36px;text-align:center}
+.mode div{flex:1}
+.mode b{display:block;font-size:17px;font-weight:800;letter-spacing:-.3px}
+.mode span{display:block;margin-top:2px;font-size:13px;color:#8b95a1;font-weight:600}
+.mode i{font-style:normal;font-size:13px;font-weight:800;color:#3182f6;white-space:nowrap}
+.mode.hero{background:#3182f6;color:#fff}
+.mode.hero span{color:rgba(255,255,255,.8)}
+.mode.hero i{color:#fff}
+.row{display:flex;gap:8px;margin-top:18px;justify-content:center}
+.ico{width:44px;height:44px;border-radius:14px;background:#fff;font-size:19px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.about{margin-top:22px;width:100%;text-align:left;font-size:13px;line-height:1.7;color:#8b95a1}
+.about h2{font-size:14px;color:#4e5968;margin:12px 0 2px}
+.foot{margin-top:14px;font-size:11px;color:#8b95a1;text-align:center}
+.foot a{color:inherit}
+.ad{width:100%;margin-top:14px}
+
+/* 문제 */
+.top{display:flex;align-items:center;height:40px}
+.x{width:40px;height:40px;border-radius:12px;font-size:20px;color:#8b95a1}
+.ttl{flex:1;text-align:center;font-size:15px;font-weight:800;color:#4e5968}
+.right{width:auto;min-width:40px;text-align:right;font-size:15px;font-weight:800;font-variant-numeric:tabular-nums}
+.bar{height:6px;border-radius:3px;background:#e5e8eb;margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;width:100%;background:#3182f6;border-radius:3px;transform-origin:left;transition:background .3s}
+.bar i.low{background:#f04452}
+.q{margin:16px 0 10px;text-align:center;font-size:18px;font-weight:800;letter-spacing:-.4px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:8px;background:#fff;border-radius:20px;width:min(100%,46vh,360px);margin:0 auto;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.cell{aspect-ratio:1;border-radius:12px;background:#f9fafb;display:flex;align-items:center;justify-content:center}
+.cell svg{width:100%;height:100%}
+.cell.qm{border:2.5px dashed #b0b8c1;background:#fff;font-size:34px;font-weight:900;color:#b0b8c1}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:min(100%,46vh,360px);margin:14px auto 0}
+.opt{aspect-ratio:1;border-radius:14px;background:#fff;border:2.5px solid #e5e8eb;display:flex;align-items:center;justify-content:center;transition:transform .08s,opacity .2s;padding:2px}
+.opt:active{transform:scale(.95)}
+.opt svg{width:100%;height:100%}
+.opt.sel{border-color:#3182f6;background:#e8f3ff}
+.opt.ok{border-color:#00b386;background:#e5f8f1}
+.opt.no{border-color:#f04452;background:#fff0f1}
+.opt.gone{opacity:.15;pointer-events:none}
+.seq{display:flex;gap:5px;padding:18px 10px;background:#fff;border-radius:20px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.num{flex:1 1 0;min-width:0;height:60px;padding:0 2px;border-radius:12px;background:#f2f4f6;display:flex;align-items:center;justify-content:center;font-size:clamp(14px,5.2vw,22px);font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.8px}
+.num.qm{background:#fff;border:2.5px dashed #b0b8c1;color:#b0b8c1}
+.opts.n{grid-template-columns:repeat(2,1fr);width:100%;max-width:360px}
+.opts.n .opt{aspect-ratio:auto;height:64px;font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}
+.fb{display:none;margin-top:14px;padding:16px;border-radius:18px;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.fb.on{display:block;animation:up .25s ease-out}
+@keyframes up{from{opacity:0;transform:translateY(8px)}}
+.fbh{font-size:17px;font-weight:800}
+.fbh.ok{color:#00a173}.fbh.no{color:#f04452}
+.fbt{margin-top:6px;font-size:14px;line-height:1.6;color:#4e5968;font-weight:600}
+.btn{display:block;width:100%;height:54px;border-radius:16px;font-size:17px;font-weight:700;margin-top:8px}
+.pri{background:#3182f6;color:#fff}
+.rew{background:#191f28;color:#fff;display:none}
+.sec{background:#f2f4f6;color:#4e5968}
+#result .sec{background:#fff}
+.two{display:flex;gap:8px}.two .btn{flex:1}
+.tools{margin-top:10px;display:none}
+.hint{height:46px;font-size:15px;background:#fff;color:#4e5968;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.hint:disabled{opacity:.4}
+
+/* 결과 */
+.card{width:100%;background:#fff;border-radius:24px;padding:26px 20px 16px;box-shadow:0 10px 40px rgba(0,0,0,.08);text-align:center;margin-top:24px}
+.lbl{font-size:14px;color:#8b95a1;font-weight:700}
+.big{font-size:72px;font-weight:900;letter-spacing:-3px;line-height:1.05;font-variant-numeric:tabular-nums}
+.big small{font-size:28px;letter-spacing:-1px}
+.tier{display:inline-block;margin-top:8px;padding:6px 12px;border-radius:999px;background:#e8f3ff;color:#1b64da;font-size:14px;font-weight:800}
+.curve{margin:16px auto 4px;width:100%;max-width:300px}
+.meta{margin-top:10px;font-size:14px;color:#4e5968;font-weight:600;line-height:1.7}
+.emo{font-size:30px;letter-spacing:4px;margin-top:10px}
+.note{margin-top:12px;font-size:11px;color:#b0b8c1;line-height:1.5}
+#toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom) + 24px);transform:translateX(-50%);background:#191f28;color:#fff;padding:12px 18px;border-radius:14px;font-size:14px;font-weight:600;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap;z-index:9}
+#toast.on{opacity:1}
+.shake{animation:shake .35s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+</style>
+</head>
+<body>
+
+<!-- 홈 -->
+<div id="home" class="scr on"><div class="wrap center">
+  <div class="logo">IQ <b>빈칸</b></div>
+  <div class="sub">빈칸에 들어갈 그림은?</div>
+  <div class="demo" id="demo"></div>
+  <div class="modes">
+    <button class="mode hero" id="mIQ"><span class="em">🧠</span><div><b>IQ 테스트</b><span>20문항 · 약 10분 · 내 IQ 추정치</span></div><i id="mIQr"></i></button>
+    <button class="mode" id="mDaily"><span class="em">📅</span><div><b>오늘의 퍼즐</b><span>매일 새 5문제 · 모두 같은 문제</span></div><i id="mDailyR"></i></button>
+    <button class="mode" id="mEnd"><span class="em">♾️</span><div><b>무한 도전</b><span>하트 3개 · 틀리면 해설로 배우기</span></div><i id="mEndR"></i></button>
+  </div>
+  <div class="row">
+    <button class="ico" id="soundBtn" aria-label="소리"></button>
+    <button class="ico" id="vibBtn" aria-label="진동"></button>
+    <button class="ico" id="shareAppBtn" aria-label="공유">↗</button>
+  </div>
+  <div class="ad" id="adHome"></div>
+  <div class="about">
+    <h2>어떤 게임인가요?</h2>
+    3×3 칸에 놓인 그림들은 모양·색·개수·크기·방향 같은 규칙을 따라요. 가로줄과 세로줄을 비교해 규칙을 찾고, 빈칸에 들어갈 그림을 고르면 돼요. 지능검사에 쓰이는 행렬 추리(레이븐 매트릭스) 방식이고, 중간중간 수열 문제도 나와요.
+    <h2>잘 푸는 요령</h2>
+    한 번에 한 가지 속성만 보세요. 개수 → 모양 → 색 → 채우기 → 크기 → 방향 순서로 하나씩 규칙을 확인하면 대부분 풀려요. 무한 도전에서 틀리면 규칙 해설이 나오니 반복하면 실력이 늘어요.
+  </div>
+  <div class="foot">IQ 결과는 재미용 추정치예요 · <a href="privacy.html">개인정보처리방침</a></div>
+</div></div>
+
+<!-- 문제 -->
+<div id="play" class="scr"><div class="wrap">
+  <div class="top"><button class="x" id="quitBtn" aria-label="그만하기">✕</button><div class="ttl" id="pTitle"></div><div class="right" id="pRight"></div></div>
+  <div class="bar" id="barWrap"><i id="tbar"></i></div>
+  <div class="q" id="qText"></div>
+  <div id="board"></div>
+  <div id="opts" class="opts"></div>
+  <div class="tools" id="tools">
+    <button class="btn hint" id="hintBtn"></button>
+  </div>
+  <div class="fb" id="fb"><div class="fbh" id="fbH"></div><div class="fbt" id="fbT"></div><button class="btn pri" id="nextBtn">다음</button></div>
+</div></div>
+
+<!-- 결과 -->
+<div id="result" class="scr"><div class="wrap center">
+  <div class="card" id="rCard"></div>
+  <div style="width:100%;margin-top:8px">
+    <button class="btn rew" id="reviveBtn">▶ 광고 보고 하트 1개로 계속</button>
+    <button class="btn pri" id="rShare">친구한테 공유</button>
+    <button class="btn sec" id="rAgain"></button>
+    <button class="btn sec" id="rHome">처음으로</button>
+  </div>
+  <div class="ad" id="adResult"></div>
+</div></div>
+
+<div id="toast"></div>
+
+<script>
+'use strict';
+/* ================= 설정 ================= */
+const CFG = {
+  adClient: 'ca-pub-6160674200239283',
+  bannerSlot: '',          // AdSense 디스플레이 광고 단위 ID(숫자). 비워두면 배너 미노출
+  url: 'https://dailydrum.github.io/iq/'
+};
+const $ = id => document.getElementById(id);
+
+/* ================= 저장 ================= */
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem('iqbk.'+k); return v===null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem('iqbk.'+k, JSON.stringify(v)); }catch(e){} }
+};
+let bestIQ = store.get('bestIQ', 0);
+let bestEnd = store.get('bestEnd', 0);
+let plays = store.get('plays', 0);
+let soundOn = store.get('sound', true);
+let vibOn = store.get('vib', true);
+let daily = store.get('daily', { day:'', res:[], streak:0, last:'' });
+
+function dayKey(d=new Date()){ return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate(); }
+const yesterday = () => { const y = new Date(); y.setDate(y.getDate()-1); return dayKey(y); };
+function streakNow(){ return (daily.last === dayKey() || daily.last === yesterday()) ? daily.streak : 0; }
+
+/* ================= 난수 ================= */
+function mulberry32(a){ return function(){ a|=0; a=a+0x6D2B79F5|0; let t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+function hashStr(s){ let h=2166136261; for(const c of s){ h^=c.charCodeAt(0); h=Math.imul(h,16777619); } return h>>>0; }
+let R = Math.random;
+const ri = n => Math.floor(R()*n);
+const pick = a => a[ri(a.length)];
+const shuffle = a => { for(let i=a.length-1;i>0;i--){ const j=ri(i+1); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const seq = (n,f) => Array.from({length:n},(_,i)=>f(i));
+
+/* ================= 행렬 문제 생성 ================= */
+const ATTRS = ['shape','color','fill','size','count','rot'];
+const NAME = {shape:'모양',color:'색',fill:'채우기',size:'크기',count:'개수',rot:'방향'};
+const SH = ['circle','square','triangle','diamond','hexagon','star'];
+const COL = ['#3182f6','#f04452','#00b386','#ff9f0a'];
+const SZ = [.6,.8,1];
+
+function constRule(a, vary){
+  let v;
+  if(a==='shape') v = vary.includes('rot') ? 'arrow' : pick(SH);
+  else if(a==='color') v = ri(4);
+  else if(a==='fill') v = R()<.6 ? 0 : ri(3);
+  else if(a==='size') v = pick([1,2,2]);
+  else if(a==='count') v = vary.includes('rot') ? pick([1,1,2]) : pick([1,1,2,3]);
+  else v = 0;
+  return { f:()=>v };
+}
+function varyRule(a, d){
+  const nm = NAME[a];
+  if(a==='rot'){
+    const step = pick(d<8 ? [90,-90] : [45,-45,90,-90]);
+    const bases = d<8 ? [0,0,0].fill(ri(4)*90) : [0,1,2].map(()=>ri(8)*45);
+    return { f:(r,c)=>((bases[r]+step*c)%360+360)%360,
+      txt:`방향: 오른쪽으로 갈수록 ${Math.abs(step)}°씩 ${step>0?'시계':'시계 반대'} 방향으로 돌아요` };
+  }
+  if(a==='count'){
+    const t = pick(d<2 ? ['p0'] : d<5 ? ['p0','p','dist'] : d<9 ? ['p','dist'] : ['p','dist','add','add']);
+    if(t==='p0' || t==='p'){
+      const step = pick([1,1,-1]);
+      const bases = [0,1,2].map(()=> step>0 ? pick([1,2]) : pick([3,4]));
+      if(t==='p0') bases.fill(step>0 ? 1 : 3);
+      return { f:(r,c)=>bases[r]+step*c, txt:`개수: 오른쪽으로 갈수록 1개씩 ${step>0?'늘어요':'줄어요'}` };
+    }
+    if(t==='add'){
+      const pairs = shuffle([[1,1],[1,2],[2,1],[1,3],[3,1],[2,2]]).slice(0,3);
+      return { f:(r,c)=> c<2 ? pairs[r][c] : pairs[r][0]+pairs[r][1], txt:'개수: 왼쪽 + 가운데 = 오른쪽' };
+    }
+  }
+  const vals = a==='shape' ? shuffle(SH.slice()).slice(0,3)
+             : a==='color' ? shuffle([0,1,2,3]).slice(0,3)
+             : a==='count' ? shuffle([1,2,3,4]).slice(0,3)
+             : shuffle([0,1,2]);
+  if(a==='size' && (d<5 || R()<.5)){
+    const up = R()<.5;
+    return { f:(r,c)=> up ? c : 2-c, txt:`크기: 오른쪽으로 갈수록 ${up?'커져요':'작아져요'}` };
+  }
+  if(d<2) return { f:(r,c)=>vals[c], txt:`${nm}: 세로줄끼리 같아요` };
+  const k = pick([1,2]);
+  return { f:(r,c)=>vals[(c+r*k)%3], txt:`${nm}: 가로줄마다 세 가지가 한 번씩 나와요` };
+}
+const keyOf = o => [o.shape,o.color,o.fill,o.size,o.count,o.shape==='arrow'?o.rot:0].join('|');
+
+function mutate(o, a, d, grid){
+  const n = {...o};
+  if(a==='rot'){
+    if(n.shape!=='arrow') return mutate(o,'count',d,grid);
+    n.rot = (n.rot + pick(d<8 ? [90,180,270] : [45,90,135,180,225,270,315])) % 360;
+    return n;
+  }
+  const all = a==='shape' ? SH : a==='color' ? [0,1,2,3] : a==='count' ? [1,2,3,4] : [0,1,2];
+  const others = all.filter(v=>v!==o[a]);
+  const seen = [...new Set(grid.map(c=>c[a]))].filter(v=>v!==o[a] && v!=='arrow');
+  n[a] = (seen.length && R()<.7) ? pick(seen) : pick(others);
+  return n;
+}
+
+function genMatrix(d){
+  const nVar = d<3 ? 1 : d<7 ? 2 : d<12 ? 3 : 4;
+  const pref = d<3 ? ['count','shape','color','size'] : ATTRS;
+  const vary = [];
+  for(let g=0; vary.length<nVar && g<200; g++){
+    const a = pick(pref);
+    if(vary.includes(a)) continue;
+    if((a==='rot' && vary.includes('shape')) || (a==='shape' && vary.includes('rot'))) continue;
+    if(a==='rot' && d<4) continue;
+    if((a==='size' && vary.includes('count')) || (a==='count' && vary.includes('size'))) continue; // 개수가 바뀌면 크기 비교가 헷갈림
+    vary.push(a);
+  }
+  const rules = {};
+  for(const a of ATTRS) rules[a] = vary.includes(a) ? varyRule(a,d) : constRule(a,vary);
+  const grid = [];
+  for(let r=0;r<3;r++) for(let c=0;c<3;c++){ const o={}; for(const a of ATTRS) o[a]=rules[a].f(r,c); grid.push(o); }
+  const ans = grid[8];
+  const opts = [ans], keys = new Set([keyOf(ans)]);
+  const add = o => { const k=keyOf(o); if(keys.has(k)) return; keys.add(k); opts.push(o); };
+  if(d>=3 && R()<.6) add({...grid[7]});       // 함정: 바로 옆 칸 그대로
+  if(d>=6 && R()<.4) add({...grid[5]});
+  const noSize = vary.includes('count');
+  const constA = ATTRS.filter(a=>!vary.includes(a) && a!=='rot' && !(noSize && a==='size'));
+  const pv = d<3 ? .55 : .85;
+  for(let g=0; opts.length<6 && g<400; g++){
+    const a = (R()<pv || !constA.length) ? pick(vary) : pick(constA);
+    add(mutate(pick(opts), a, d, grid));
+  }
+  while(opts.length<6) add(mutate(pick(opts), pick(noSize ? ['shape','color','fill','count'] : ['shape','color','fill','size','count']), d, grid));
+  const order = shuffle([0,1,2,3,4,5]);
+  return { type:'mat', d, grid:grid.slice(0,8), opts:order.map(i=>opts[i]), ans:order.indexOf(0),
+           expl: vary.map(a=>rules[a].txt) };
+}
+
+/* ================= 수열 문제 생성 ================= */
+function genSeq(d){
+  const t = pick(d<4 ? ['ar','ar','dn'] : d<9 ? ['geo','sec','alt','dn','ar'] : ['fib','lin','sq','alt2','sec','geo','tri']);
+  let s = [], ex = '';
+  if(t==='ar'){ const a=1+ri(15), k=2+ri(8); s=seq(6,i=>a+k*i); ex=`${k}씩 더해요`; }
+  else if(t==='dn'){ const k=3+ri(9), a=k*6+ri(20); s=seq(6,i=>a-k*i); ex=`${k}씩 빼요`; }
+  else if(t==='geo'){ const r=pick([2,2,3]), a=1+ri(r===2?5:3); s=seq(6,i=>a*r**i); ex=`${r}씩 곱해요`; }
+  else if(t==='sec'){ const k0=1+ri(4), dd=1+ri(3); let x=1+ri(10); s=[x]; for(let i=0;i<5;i++){ x+=k0+dd*i; s.push(x); }
+    ex=`더하는 수가 ${dd}씩 커져요 (+${k0}, +${k0+dd}, +${k0+2*dd} …)`; }
+  else if(t==='alt'){ const a=1+ri(9), b=20+ri(20), p=2+ri(5), q=1+ri(4); s=seq(6,i=> i%2 ? b-q*((i-1)/2) : a+p*(i/2));
+    ex=`두 수열이 번갈아 나와요 (홀수째는 +${p}, 짝수째는 -${q})`; }
+  else if(t==='fib'){ const a=1+ri(4), b=a+1+ri(4); s=[a,b]; while(s.length<6) s.push(s[s.length-1]+s[s.length-2]); ex='앞의 두 수를 더하면 다음 수예요'; }
+  else if(t==='lin'){ const m=pick([2,3]), c=pick([1,-1,2]); let x = m===3 ? 1+ri(2) : 1+ri(4); s=[x]; while(s.length<6){ x=x*m+c; s.push(x); }
+    ex=`×${m} 하고 ${c>0?'+':'-'}${Math.abs(c)} 해요`; }
+  else if(t==='sq'){ const o=ri(3), c=pick([0,0,1,-1,2]); s=seq(6,i=>(i+1+o)**2+c);
+    ex = c ? `제곱수에 ${c>0?'+':'-'}${Math.abs(c)} (${1+o}², ${2+o}², ${3+o}² …)` : `제곱수예요 (${1+o}², ${2+o}², ${3+o}² …)`; }
+  else if(t==='tri'){ const o=ri(3); s=seq(6,i=>(i+1+o)*(i+2+o)); ex=`n×(n+1) 꼴이에요 (${1+o}×${2+o}, ${2+o}×${3+o} …)`; }
+  else { const p=2+ri(4); let x=1+ri(5); s=[x]; for(let i=0;s.length<6;i++){ x = i%2===0 ? x+p : x*2; s.push(x); } ex=`+${p}, ×2 를 번갈아 해요`; }
+  const ans = s[5], shown = s.slice(0,5), diff = s[4]-s[3];
+  const neg = ans<0 || shown.some(v=>v<0);
+  const cands = [s[4]+diff, ...shuffle([ans+1,ans-1,ans+2,ans-2,ans+diff,ans-diff,ans+10,ans-10,s[4]+s[3],ans*2])];
+  const opts = [ans];
+  for(const c of cands){ if(opts.length>=4) break; if(c!==ans && !opts.includes(c) && (c>=0 || neg)) opts.push(c); }
+  const order = shuffle([0,1,2,3]);
+  return { type:'seq', d, shown, opts:order.map(i=>opts[i]), ans:order.indexOf(0), expl:[ex] };
+}
+
+/* ================= 그리기 ================= */
+const POS = {1:[[50,50]],2:[[28,50],[72,50]],3:[[50,29],[28,71],[72,71]],4:[[29,29],[71,29],[29,71],[71,71]]};
+const BASE_R = {1:31,2:20,3:18,4:16};
+function poly(pts){ return pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' '); }
+function shapeEl(sh, x, y, r, rot, st){
+  if(sh==='circle') return `<circle cx="${x}" cy="${y}" r="${r*.92}" ${st}/>`;
+  if(sh==='square'){ const h=r*.8; return `<rect x="${x-h}" y="${y-h}" width="${2*h}" height="${2*h}" rx="${r*.12}" ${st}/>`; }
+  let pts;
+  if(sh==='triangle') pts=[[x,y-r],[x+r*.95,y+r*.68],[x-r*.95,y+r*.68]];
+  else if(sh==='diamond') pts=[[x,y-r],[x+r*.78,y],[x,y+r],[x-r*.78,y]];
+  else if(sh==='hexagon') pts=seq(6,i=>{const t=Math.PI/3*i; return [x+r*.95*Math.cos(t), y+r*.95*Math.sin(t)];});
+  else if(sh==='star') pts=seq(10,i=>{const t=-Math.PI/2+Math.PI/5*i, rr=i%2?r*.45:r; return [x+rr*Math.cos(t), y+rr*Math.sin(t)];});
+  else { // arrow
+    pts=[[0,-1],[.72,-.08],[.27,-.08],[.27,.92],[-.27,.92],[-.27,-.08],[-.72,-.08]].map(p=>[x+p[0]*r,y+p[1]*r]);
+    return `<polygon points="${poly(pts)}" transform="rotate(${rot} ${x} ${y})" ${st}/>`;
+  }
+  return `<polygon points="${poly(pts)}" ${st}/>`;
+}
+function cellSVG(o){
+  const c = COL[o.color], r = BASE_R[o.count]*SZ[o.size];
+  const st = o.fill===0 ? `fill="${c}"`
+           : o.fill===1 ? `fill="none" stroke="${c}" stroke-width="3.5" stroke-linejoin="round"`
+           : `fill="${c}" fill-opacity=".28" stroke="${c}" stroke-width="2.5" stroke-linejoin="round"`;
+  return `<svg viewBox="0 0 100 100">${POS[o.count].map(p=>shapeEl(o.shape,p[0],p[1],r,o.rot,st)).join('')}</svg>`;
+}
+
+/* ================= 광고 ================= */
+let inAd = false, rewardFn = null, rewardKind = '';
+try{ adConfig({ preloadAdBreaks:'on', sound:'on' }); }catch(e){}
+// 전면 광고: 광고가 없거나 차단돼도 cb는 반드시 한 번 실행
+function withAd(name, cb, force){
+  let done = false, started = false;
+  const go = ()=>{ if(done) return; done = true; cb(); };
+  if(!force && plays < 2){ go(); return; }
+  try{
+    adBreak({ type:'next', name,
+      beforeAd(){ started = true; inAd = true; },
+      afterAd(){ inAd = false; },
+      adBreakDone(){ go(); }
+    });
+  }catch(e){}
+  setTimeout(()=>{ if(!started) go(); }, 900);
+}
+// 보상형 광고 준비: 광고가 있으면 onReady(true), 다 보면 onReward()
+function prepareReward(kind, onReady, onReward){
+  rewardFn = null; rewardKind = kind; onReady(false);
+  try{
+    adBreak({ type:'reward', name:kind,
+      beforeAd(){ inAd = true; },
+      afterAd(){ inAd = false; },
+      beforeReward(showAdFn){ if(rewardKind!==kind) return; rewardFn = showAdFn; onReady(true); },
+      adDismissed(){},
+      adViewed(){ onReward(); },
+      adBreakDone(){ if(!rewardFn) onReady(false); }
+    });
+  }catch(e){}
+}
+function mountBanners(){
+  if(!CFG.bannerSlot) return;
+  ['adHome','adResult'].forEach(id=>{
+    const el = $(id); if(el.dataset.done) return; el.dataset.done = 1;
+    el.innerHTML = `<ins class="adsbygoogle" style="display:block" data-ad-client="${CFG.adClient}" data-ad-slot="${CFG.bannerSlot}" data-ad-format="horizontal" data-full-width-responsive="true"></ins>`;
+    try{ (adsbygoogle = window.adsbygoogle || []).push({}); }catch(e){}
+  });
+}
+
+/* ================= 소리·진동 ================= */
+let AC = null;
+function tone(f, dur=.12, type='sine', vol=.12, delay=0){
+  if(!soundOn || inAd) return;
+  try{
+    AC = AC || new (window.AudioContext||window.webkitAudioContext)();
+    if(AC.state==='suspended') AC.resume();
+    const t = AC.currentTime + delay, o = AC.createOscillator(), g = AC.createGain();
+    o.type = type; o.frequency.value = f;
+    g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(.001, t+dur);
+    o.connect(g).connect(AC.destination); o.start(t); o.stop(t+dur);
+  }catch(e){}
+}
+const sfx = {
+  tap(){ tone(660,.05,'sine',.06); },
+  ok(){ tone(784,.1); tone(1175,.16,'sine',.12,.08); vib(15); },
+  no(){ tone(220,.22,'triangle',.14); vib([30,40,30]); },
+  done(){ [523,659,784,1047].forEach((f,i)=>tone(f,.18,'sine',.1,i*.09)); }
+};
+function vib(p){ if(vibOn && navigator.vibrate) try{ navigator.vibrate(p); }catch(e){} }
+function toast(m){ const t=$('toast'); t.textContent=m; t.classList.add('on'); clearTimeout(toast.t); toast.t=setTimeout(()=>t.classList.remove('on'),1800); }
+
+/* ================= 화면 ================= */
+function screen(id){ ['home','play','result'].forEach(s=>$(s).classList.toggle('on', s===id)); $(id).scrollTop = 0; }
+
+function renderHome(){
+  $('mIQr').textContent = bestIQ ? '최고 '+bestIQ : '';
+  const done = daily.day===dayKey() && daily.res.length===5;
+  const st = streakNow();
+  $('mDailyR').textContent = done ? `✓ ${daily.res.filter(Boolean).length}/5` : st ? `🔥 ${st}일` : 'NEW';
+  $('mEndR').textContent = bestEnd ? '최고 '+bestEnd+'문제' : '';
+  $('soundBtn').textContent = soundOn ? '🔊' : '🔇';
+  $('vibBtn').textContent = vibOn ? '📳' : '📴';
+  screen('home'); mountBanners();
+}
+function renderDemo(){
+  R = mulberry32(7); const q = genMatrix(4); R = Math.random;
+  $('demo').innerHTML = `<div class="grid" style="width:180px;gap:4px;padding:6px;border-radius:16px">${
+    q.grid.map(o=>`<div class="cell" style="border-radius:8px">${cellSVG(o)}</div>`).join('')
+  }<div class="cell qm" style="font-size:22px;border-radius:8px">?</div></div>`;
+}
+
+/* ================= 게임 진행 ================= */
+const IQ_N = 20, IQ_SEQ = [3,7,11,15,18], IQ_LIMIT = 60, END_LIMIT = 45;
+let S = null, rafId = 0;
+
+function startIQ(){
+  R = Math.random;
+  S = { mode:'iq', i:0, res:[], times:[] };
+  showQ();
+}
+function startDaily(){
+  if(daily.day===dayKey() && daily.res.length===5){ showDailyResult(); return; }
+  R = mulberry32(hashStr('iqbk-'+dayKey()));
+  const qs = [genMatrix(2), genMatrix(6), genSeq(7), genMatrix(10), genMatrix(14)];
+  R = Math.random;
+  if(daily.day!==dayKey()) daily = { ...daily, day:dayKey(), res:[] };
+  S = { mode:'daily', i:daily.res.length, qs };
+  showQ();
+}
+function startEndless(){
+  R = Math.random;
+  S = { mode:'end', i:0, solved:0, hearts:3, revived:false, free:1 };
+  showQ();
+}
+
+function makeQ(){
+  if(S.mode==='iq') return IQ_SEQ.includes(S.i) ? genSeq(S.i) : genMatrix(Math.round(S.i*.95));
+  if(S.mode==='daily') return S.qs[S.i];
+  const lv = S.solved;
+  return (lv%5===4) ? genSeq(lv) : genMatrix(Math.min(lv, 18) + (lv>18 ? ri(3) : 0));
+}
+
+function showQ(){
+  const q = S.q = makeQ();
+  S.locked = false; S.t0 = performance.now();
+  screen('play');
+  $('fb').classList.remove('on');
+  $('pTitle').textContent = S.mode==='iq' ? `IQ 테스트 ${S.i+1}/${IQ_N}` : S.mode==='daily' ? `오늘의 퍼즐 ${S.i+1}/5` : `무한 도전 · ${S.solved+1}번째`;
+  $('pRight').textContent = S.mode==='end' ? '❤️'.repeat(S.hearts) + '🤍'.repeat(Math.max(0,3-S.hearts)) : '';
+  $('qText').textContent = q.type==='mat' ? '빈칸에 들어갈 그림은?' : '? 에 들어갈 수는?';
+  if(q.type==='mat'){
+    $('board').innerHTML = `<div class="grid">${q.grid.map(o=>`<div class="cell">${cellSVG(o)}</div>`).join('')}<div class="cell qm">?</div></div>`;
+    $('opts').className = 'opts';
+    $('opts').innerHTML = q.opts.map((o,i)=>`<button class="opt" data-i="${i}">${cellSVG(o)}</button>`).join('');
+  }else{
+    $('board').innerHTML = `<div class="seq">${q.shown.map(v=>`<div class="num">${v}</div>`).join('')}<div class="num qm">?</div></div>`;
+    $('opts').className = 'opts n';
+    $('opts').innerHTML = q.opts.map((v,i)=>`<button class="opt" data-i="${i}">${v}</button>`).join('');
+  }
+  // 힌트(무한 도전만)
+  $('tools').style.display = S.mode==='end' ? 'block' : 'none';
+  S.hinted = false;
+  if(S.mode==='end') setupHint();
+  // 타이머
+  const lim = S.mode==='iq' ? IQ_LIMIT : S.mode==='end' ? END_LIMIT : 0;
+  $('barWrap').style.visibility = lim ? 'visible' : 'hidden';
+  cancelAnimationFrame(rafId);
+  if(lim){
+    const bar = $('tbar');
+    const loop = () => {
+      if(S.locked) return;
+      if(inAd){ S.t0 += 16; rafId = requestAnimationFrame(loop); return; }
+      const left = 1 - (performance.now()-S.t0)/1000/lim;
+      bar.style.transform = `scaleX(${Math.max(0,left)})`;
+      bar.classList.toggle('low', left < .2);
+      if(left <= 0){ answer(-1); return; }
+      rafId = requestAnimationFrame(loop);
+    };
+    loop();
+  }
+}
+
+function setupHint(){
+  const b = $('hintBtn');
+  if(S.free > 0){ b.disabled = false; b.textContent = `💡 힌트 · 오답 2개 지우기 (무료 ${S.free})`; return; }
+  b.disabled = true; b.textContent = '💡 힌트 준비 중…';
+  prepareReward('hint', ok=>{
+    if(S.hinted || S.locked) return;
+    b.disabled = !ok; b.textContent = ok ? '▶ 광고 보고 힌트 · 오답 2개 지우기' : '💡 힌트 없음';
+  }, useHint);
+}
+function useHint(){
+  if(S.hinted || S.locked) return;
+  S.hinted = true;
+  const wrong = shuffle(S.q.opts.map((_,i)=>i).filter(i=>i!==S.q.ans)).slice(0,2);
+  document.querySelectorAll('#opts .opt').forEach(el=>{ if(wrong.includes(+el.dataset.i)) el.classList.add('gone'); });
+  $('hintBtn').disabled = true; $('hintBtn').textContent = '💡 힌트 사용함';
+}
+$('hintBtn').onclick = () => {
+  if(S.hinted || S.locked) return;
+  if(S.free > 0){ S.free--; useHint(); return; }
+  if(rewardFn){ const f = rewardFn; rewardFn = null; f(); }
+};
+
+$('opts').addEventListener('click', e=>{
+  const b = e.target.closest('.opt'); if(!b) return;
+  answer(+b.dataset.i);
+});
+
+function answer(k){
+  if(S.locked) return;
+  S.locked = true; cancelAnimationFrame(rafId);
+  const q = S.q, ok = k===q.ans, sec = (performance.now()-S.t0)/1000;
+  const els = [...document.querySelectorAll('#opts .opt')];
+  if(S.mode==='iq'){
+    S.res.push(ok); S.times.push(Math.min(sec, IQ_LIMIT));
+    if(k>=0) els[k].classList.add('sel');
+    sfx.tap();
+    setTimeout(()=>{ S.i++; if(S.i<IQ_N) showQ(); else finishIQ(); }, k<0 ? 500 : 260);
+    if(k<0) toast('시간 초과');
+    return;
+  }
+  els[q.ans].classList.add('ok');
+  if(!ok && k>=0) els[k].classList.add('no');
+  if(ok) sfx.ok(); else { sfx.no(); $('board').classList.add('shake'); setTimeout(()=>$('board').classList.remove('shake'),400); }
+  $('fbH').className = 'fbh ' + (ok?'ok':'no');
+  $('fbH').textContent = ok ? pick(['정답이에요!','맞았어요!','좋아요, 정답!']) : (k<0 ? '시간 초과' : '아쉬워요, 오답');
+  $('fbT').innerHTML = '규칙 · ' + q.expl.join('<br>규칙 · ');
+  if(S.mode==='daily'){
+    daily.res.push(ok); store.set('daily', daily);
+    S.i++;
+    $('nextBtn').textContent = S.i<5 ? '다음 문제' : '결과 보기';
+  }else{
+    if(ok) S.solved++; else S.hearts--;
+    $('pRight').textContent = '❤️'.repeat(Math.max(0,S.hearts)) + '🤍'.repeat(Math.max(0,3-S.hearts));
+    $('nextBtn').textContent = S.hearts>0 ? '다음 문제' : '결과 보기';
+  }
+  $('hintBtn').disabled = true;
+  $('fb').classList.add('on');
+  setTimeout(()=>$('fb').scrollIntoView({behavior:'smooth', block:'nearest'}), 60);
+}
+$('nextBtn').onclick = () => {
+  if(S.mode==='daily'){ if(S.i<5) showQ(); else finishDaily(); }
+  else if(S.hearts>0) showQ(); else finishEndless();
+};
+$('quitBtn').onclick = () => {
+  if(S.mode==='daily'){ renderHome(); return; }   // 오늘의 퍼즐은 이어 풀 수 있음
+  if(!confirm('그만할까요? 지금까지 기록은 사라져요.')) return;
+  cancelAnimationFrame(rafId); S.locked = true; renderHome();
+};
+
+/* ================= 결과 ================= */
+function normCdf(z){ const t=1/(1+.2316419*Math.abs(z)); const d=.3989423*Math.exp(-z*z/2); const p=d*t*(.3193815+t*(-.3565638+t*(1.781478+t*(-1.821256+t*1.330274)))); return z>0 ? 1-p : p; }
+function iqScore(res, times){
+  let w=0, got=0;
+  res.forEach((ok,i)=>{ const wi = 1 + i/6; w += wi; if(ok) got += wi; });
+  const p = got/w;
+  const avg = times.reduce((a,b)=>a+b,0)/times.length;
+  const speed = p>.5 ? Math.max(0, Math.min(5, (30-avg)/4)) : 0;
+  return Math.round(Math.max(75, Math.min(145, 72 + p*70 + speed)));
+}
+function tierOf(iq){
+  return iq>=135 ? '최상위 두뇌 🏆' : iq>=125 ? '상위권 추리력 🧠' : iq>=115 ? '평균 이상 ✨' : iq>=95 ? '평균 범위 👍' : '워밍업이 필요해요 🌱';
+}
+function curveSVG(iq){
+  const W=300,H=90, X=v=>(v-55)/(145-55)*W, Y=v=>H-6-Math.exp(-(((v-100)/15)**2)/2)*(H-14);
+  let path=`M0,${H-6}`; for(let v=55; v<=145; v+=2) path+=` L${X(v).toFixed(1)},${Y(v).toFixed(1)}`;
+  let fill=`M${X(iq).toFixed(1)},${H-6}`; for(let v=iq; v<=145; v+=1) fill+=` L${X(v).toFixed(1)},${Y(v).toFixed(1)}`; fill+=` L${W},${H-6} Z`;
+  return `<svg class="curve" viewBox="0 0 ${W} ${H+14}">
+    <path d="${fill}" fill="#3182f6" fill-opacity=".18"/>
+    <path d="${path}" fill="none" stroke="#b0b8c1" stroke-width="2"/>
+    <line x1="${X(iq)}" x2="${X(iq)}" y1="6" y2="${H-6}" stroke="#3182f6" stroke-width="2.5"/>
+    <circle cx="${X(iq)}" cy="${Y(iq)}" r="5" fill="#3182f6"/>
+    ${[70,85,100,115,130].map(v=>`<text x="${X(v)}" y="${H+10}" font-size="10" fill="#8b95a1" text-anchor="middle">${v}</text>`).join('')}
+  </svg>`;
+}
+let share = { text:'' }, againFn = null;
+function resultButtons(again, againLbl){
+  againFn = again; $('rAgain').textContent = againLbl;
+  $('reviveBtn').style.display = 'none';
+}
+
+function finishIQ(){
+  plays++; store.set('plays', plays);
+  const iq = iqScore(S.res, S.times);
+  const n = S.res.filter(Boolean).length;
+  const top = Math.max(.1, (1-normCdf((iq-100)/15))*100);
+  const topTxt = top<1 ? top.toFixed(1) : Math.round(top);
+  const avg = Math.round(S.times.reduce((a,b)=>a+b,0)/S.times.length);
+  const isBest = iq > bestIQ; if(isBest){ bestIQ = iq; store.set('bestIQ', iq); }
+  withAd('iq_result', ()=>{
+    sfx.done();
+    $('rCard').innerHTML = `
+      <div class="lbl">내 IQ 추정치</div>
+      <div class="big">${iq}</div>
+      <div class="tier">${tierOf(iq)}</div>
+      ${curveSVG(iq)}
+      <div class="meta"><b>상위 ${topTxt}%</b><br>정답 ${n}/${IQ_N} · 문항당 평균 ${avg}초${isBest && plays>1 ? ' · 🎉 최고 기록' : ''}</div>
+      <div class="note">문제 난이도와 속도로 계산한 재미용 추정치예요. 공식 지능검사 결과가 아니에요.</div>`;
+    share.text = `IQ 빈칸 테스트에서 내 IQ 추정치 ${iq} (상위 ${topTxt}%) 나왔어. 너는?`;
+    resultButtons(startIQ, '다시 테스트');
+    $('rHome').textContent = '처음으로';
+    screen('result'); mountBanners();
+  }, true);
+}
+
+function finishDaily(){
+  plays++; store.set('plays', plays);
+  if(daily.last !== dayKey()){
+    daily.streak = daily.last===yesterday() ? daily.streak+1 : 1;
+    daily.last = dayKey();
+  }
+  store.set('daily', daily);
+  withAd('daily_result', showDailyResult);
+}
+function showDailyResult(){
+  const n = daily.res.filter(Boolean).length;
+  const emo = daily.res.map(v=>v?'🟩':'🟥').join('');
+  if(S && S.mode==='daily') sfx.done();
+  $('rCard').innerHTML = `
+    <div class="lbl">오늘의 퍼즐 · ${new Date().getMonth()+1}월 ${new Date().getDate()}일</div>
+    <div class="big">${n}<small>/5</small></div>
+    <div class="emo">${emo}</div>
+    <div class="tier" style="margin-top:12px">🔥 ${streakNow()}일 연속</div>
+    <div class="meta">${n===5 ? '완벽해요! 친구도 5개 다 맞힐까요?' : '내일 새 문제가 나와요'}</div>`;
+  share.text = `IQ 빈칸 오늘의 퍼즐 ${n}/5 ${emo} 🔥${streakNow()}일`;
+  resultButtons(startEndless, '무한 도전으로 더 풀기');
+  $('rHome').textContent = '처음으로';
+  screen('result'); mountBanners();
+}
+
+function finishEndless(){
+  plays++; store.set('plays', plays);
+  const isBest = S.solved > bestEnd; if(isBest){ bestEnd = S.solved; store.set('bestEnd', bestEnd); }
+  $('rCard').innerHTML = `
+    <div class="lbl">무한 도전 · 푼 문제</div>
+    <div class="big">${S.solved}<small>문제</small></div>
+    ${isBest && S.solved ? '<div class="tier">🎉 최고 기록!</div>' : ''}
+    <div class="meta">최고 기록 ${bestEnd}문제</div>`;
+  share.text = `IQ 빈칸 무한 도전에서 ${S.solved}문제 연속으로 풀었어. 너는 몇 문제?`;
+  resultButtons(()=>withAd('endless_restart', startEndless), '다시 도전');
+  $('rHome').textContent = '처음으로';
+  screen('result'); mountBanners();
+  if(!S.revived && S.solved >= 3){
+    prepareReward('revive', ok=>{ $('reviveBtn').style.display = ok ? 'block' : 'none'; }, ()=>{
+      S.revived = true; S.hearts = 1; $('reviveBtn').style.display = 'none'; showQ();
+    });
+  }
+}
+$('reviveBtn').onclick = () => { if(rewardFn){ const f = rewardFn; rewardFn = null; f(); } };
+$('rAgain').onclick = () => againFn && againFn();
+$('rHome').onclick = () => withAd('to_home', renderHome);
+$('rShare').onclick = () => doShare(share.text);
+
+async function doShare(text){
+  try{
+    if(navigator.share){ await navigator.share({ title:'IQ 빈칸', text, url:CFG.url }); return; }
+    await navigator.clipboard.writeText(text + ' ' + CFG.url); toast('링크를 복사했어요. 친구한테 붙여넣기!');
+  }catch(e){}
+}
+
+/* ================= 홈 버튼 ================= */
+$('mIQ').onclick = () => { sfx.tap(); startIQ(); };
+$('mDaily').onclick = () => { sfx.tap(); startDaily(); };
+$('mEnd').onclick = () => { sfx.tap(); startEndless(); };
+$('soundBtn').onclick = () => { soundOn = !soundOn; store.set('sound', soundOn); renderHome(); };
+$('vibBtn').onclick = () => { vibOn = !vibOn; store.set('vib', vibOn); vib(20); renderHome(); };
+$('shareAppBtn').onclick = () => doShare('빈칸에 들어갈 그림 맞혀봐. 20문항 IQ 테스트');
+
+renderDemo();
+renderHome();
+if('serviceWorker' in navigator && location.protocol==='https:') navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>
