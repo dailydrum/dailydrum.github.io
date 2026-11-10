@@ -115,7 +115,7 @@ def render(code, lang, name, locale, rtl, t):
 <link rel="icon" href="/brand.svg"><link rel="stylesheet" href="/tempo-2026.css"><link rel="stylesheet" href="/i18n.css">
 </head><body>
 <a class="skip" href="#main">{e('skip')}</a>
-<header class="wrap masthead"><a class="brand" href="#top" aria-label="TEMPO"><img src="/brand.svg" alt="" width="38" height="38"><span>TEMPO<small>DAILYDRUM</small></span></a><nav aria-label="Menu"><a href="#features">{e('nav_features')}</a><a href="#changes">{e('nav_new')}</a><a href="#download">{e('nav_download')}</a>{switcher(code, t['lang_label'])}</nav></header>
+<header class="wrap masthead"><a class="brand" href="#top" aria-label="TEMPO"><img src="/brand.svg" alt="" width="38" height="38"><span>TEMPO<small>DAILYDRUM</small></span></a><nav aria-label="Menu"><a href="#features">{e('nav_features')}</a><a href="#changes">{e('nav_new')}</a>{('<a href="/' + code + '/metronome/">' + e('nav_guide') + '</a>') if t.get('nav_guide') else ''}<a href="#download">{e('nav_download')}</a>{switcher(code, t['lang_label'])}</nav></header>
 <main id="main">
 <section class="wrap hero" id="top">
 <div class="hero-copy"><p class="eyebrow">YOUR RHYTHM. EVERY DAY.</p><h1>{e('h1a')}<br><em>{e('h1b')}</em></h1><p class="lead">{b('lead')}</p><div class="actions"><a class="button primary" href="#download">{e('cta')}</a><a class="text-link" href="#features">{e('cta2')} ↓</a></div><p class="secondary">Metronome · List · Live · Playback</p></div>
@@ -134,7 +134,7 @@ def render(code, lang, name, locale, rtl, t):
 <section class="wrap updates" id="changes"><div><p class="eyebrow">WHAT'S NEW / 2.5.3</p><h2>{b('new_h2')}</h2></div><ul>{new}</ul></section>
 <section class="wrap feature spotlight" id="pro"><div class="feature-copy"><p class="eyebrow">TEMPO PRO · iOS</p><h2>{b('pro_h2')}</h2><p>{e('pro_p')}</p><ul>{lis(t['pro_li'])}</ul><p class="secondary">{e('pro_note')}</p></div><div class="card-copy"><p class="eyebrow">START FREE</p><h3>{e('free_h3')}</h3><p>{e('free_p1')}</p><p>{e('free_p2')}</p></div></section>
 <section class="download wrap" id="download"><div><p class="eyebrow">READY FOR YOUR NEXT BEAT?</p><h2>{e('dl_h2a')}<br><em>{e('dl_h2b')}</em></h2></div><div class="download-links"><a class="button primary" href="{APPSTORE}" target="_blank" rel="noopener">App Store ↗</a><p>iPhone · iPad</p><a class="button outline" href="{PLAY}" target="_blank" rel="noopener">Google Play ↗</a><p>Android</p></div></section>
-</main><footer class="wrap"><a class="brand" href="#top">TEMPO<small>BY DAILYDRUM</small></a><div><a href="/privacy.html">{e('privacy')}</a><a href="mailto:gksrlffh@naver.com">{e('contact')}</a><a href="https://www.instagram.com/daily_drum_/" target="_blank" rel="noopener">Instagram ↗</a></div><p>© 2026 DailyDrum</p></footer>
+</main><footer class="wrap"><a class="brand" href="#top">TEMPO<small>BY DAILYDRUM</small></a><div>{('<a href="/' + code + '/metronome/">' + e('nav_guide') + '</a>') if t.get('nav_guide') else ''}<a href="/privacy.html">{e('privacy')}</a><a href="mailto:gksrlffh@naver.com">{e('contact')}</a><a href="https://www.instagram.com/daily_drum_/" target="_blank" rel="noopener">Instagram ↗</a></div><p>© 2026 DailyDrum</p></footer>
 </body></html>
 """
 
@@ -185,7 +185,7 @@ def main():
         t = json.loads((SRC / f"{code}.json").read_text(encoding="utf-8"))
         if required is None:
             required = set(json.loads((SRC / "en.json").read_text(encoding="utf-8")))
-        missing = required - set(t)
+        missing = required - set(t) - {"nav_guide"}
         if missing:
             raise SystemExit(f"{code}: 빠진 키 {sorted(missing)}")
         hints[code] = t["view_in"]

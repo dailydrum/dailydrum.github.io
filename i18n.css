@@ -25,3 +25,5 @@ h1,h2,h3{overflow-wrap:break-word;hyphens:auto}
 }
 [dir=rtl] .eyebrow{direction:ltr;text-align:right}
 .feature>*,.feature-grid>*,.updates>*,.hero>*,.download>*{min-width:0}.feature-copy,.card-copy,.updates li{overflow-wrap:anywhere}
+.article nav.more{display:block}
+:lang(ja) .article p,:lang(ja) .article li,:lang(ja) .article h2,:lang(ja) .article h3,:lang(ja) .article td{word-break:normal;line-break:strict}

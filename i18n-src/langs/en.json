@@ -20,7 +20,12 @@
 "intro_p": "Leave the beat and settings to TEMPO. Keep your focus on playing.",
 "pb_h2": "On to the next section.\nNever lose the flow.",
 "pb_p": "Intro · Verse · Chorus · Bridge · Ending. Save the sections and bar counts of each song, and get a voice cue before the next part begins.",
-"pb_li": ["Switch only the bars you need from 4/4 to 2/4", "Count-in per song · current section and bar on screen", "From the Ending, jump straight into the next song's count-in", "Tap a section to set bar count, name, order or duplicate it"],
+"pb_li": [
+"Switch only the bars you need from 4/4 to 2/4",
+"Count-in per song · current section and bar on screen",
+"From the Ending, jump straight into the next song's count-in",
+"Tap a section to set bar count, name, order or duplicate it"
+],
 "pb_note": "Clicks and section cues only. It does not play backing tracks.",
 "pb_alt": "Playback screen editing bar counts for Intro, Verse, Chorus and Ending",
 "mm_h2": "Even one short bar.\nWith a simple tap.",
@@ -29,7 +34,11 @@
 "mm_alt": "Editor with bar 4 of an 8-bar Verse set to 2/4",
 "dm_h2": "After the click,\nyour own groove.",
 "dm_p": "Build beats on four tracks: kick, snare, hi-hat and ride. Start from basic beats or shuffle, jazz and bossa nova presets, then tap the steps to edit the pattern.",
-"dm_li": ["4 tracks · 16th-note / triplet grid", "16th swing · tempo control · loop playback", "Save the current pattern on your device"],
+"dm_li": [
+"4 tracks · 16th-note / triplet grid",
+"16th swing · tempo control · loop playback",
+"Save the current pattern on your device"
+],
 "dm_secret": "Hidden tool: tap the DailyDrum logo on the Tempo tab 8 times quickly.",
 "dm_alt": "Pattern editor with four drum tracks, 16th/triplet grid and swing",
 "list_h3": "Prepare every song.\nShare the whole list.",
@@ -49,10 +58,31 @@
 "vs_note": "TAP with your chosen sound · voices in Korean, English, Japanese, Chinese (Simplified/Traditional)",
 "vs_alt": "Settings for click sounds, pitch and sound length",
 "new_h2": "Precise sound.\nSimple controls.",
-"new_items": [["Per-song Playback and mixed meter", "Edit sections and bars, count-ins and voice cues for the next part. Turn any bar of a 4/4 song into 2/4."], ["New click sounds", "Digital, Gentle and Acoustic now have separate accent and regular hits, with clearer control at high volume."], ["Exactly the sound you chose", "Hear your selected click in TAP, and keep your saved downbeat accent in Tempo Anchor."], ["Practice tools gathered in List", "Control the Automator and Tracker from a compact settings window, with a balanced play bar at the bottom."]],
+"new_items": [
+[
+"Per-song Playback and mixed meter",
+"Edit sections and bars, count-ins and voice cues for the next part. Turn any bar of a 4/4 song into 2/4."
+],
+[
+"New click sounds",
+"Digital, Gentle and Acoustic now have separate accent and regular hits, with clearer control at high volume."
+],
+[
+"Exactly the sound you chose",
+"Hear your selected click in TAP, and keep your saved downbeat accent in Tempo Anchor."
+],
+[
+"Practice tools gathered in List",
+"Control the Automator and Tracker from a compact settings window, with a balanced play bar at the bottom."
+]
+],
 "pro_h2": "Buy once.\nUnlimited Playback.",
 "pro_p": "A one-time in-app upgrade, not a separate app. It is not a subscription.",
-"pro_li": ["Removes all ads in the app", "Unlimited Playback songs", "Restore on the same Apple ID"],
+"pro_li": [
+"Removes all ads in the app",
+"Unlimited Playback songs",
+"Restore on the same Apple ID"
+],
 "pro_note": "Check the final price on the App Store purchase screen. Purchase may be unavailable until the product passes review.",
 "free_h3": "Free is enough to perform.",
 "free_p1": "Use the metronome, List, Live and one Playback song. Any extra Playback setups you already saved are kept, not deleted.",
@@ -60,5 +90,6 @@
 "dl_h2a": "Today, too,",
 "dl_h2b": "at your tempo.",
 "privacy": "Privacy Policy",
-"contact": "Contact"
+"contact": "Contact",
+"nav_guide": "Guide"
 }

@@ -1,0 +1,249 @@
+##### metronome/
+TITLE: Metronome Guide | Metronome app tips, practice methods, by instrument and situation
+DESC: How to choose a metronome app, how to practice with a click, what BPM means, and how to use a metronome for every instrument and situation. A practical guide from TEMPO, the metronome made by DailyDrum drum studio.
+CRUMB: Metronome guide
+---
+<p class="eyebrow">METRONOME GUIDE</p><h1>The metronome guide.<br><em>From practice room to stage.</em></h1>
+<section class="story"><p class="eyebrow">WHY DAILYDRUM TEMPO</p><h2>Everyone turns on a metronome for a different reason, but we all want the same thing: a steady first beat.</h2><p>A child picking up an instrument for the first time, an adult who wants to stop rushing, a church keyboardist preparing every week, a drummer heading on stage. DailyDrum has taught timing one-on-one to all of them.</p><p>This guide collects the metronome methods we use in lessons, sorted by situation. TEMPO is the metronome we built so you can keep that practice going every day.</p><ul><li>Practice: subdivisions and accents, tempo trainer, drum machine</li><li>Prepare: save BPM per song and share setlists</li><li>Perform: Live screen and voice count-in</li></ul>{{BRAND}}</section>
+<nav class="more cats" aria-label="Guides"><h2>Basics &amp; choosing an app</h2>{{LIST: /metronome-app/ /what-is-metronome-app /digital-vs-mechanical-metronome /beginner-metronome}}<h2>Practice &amp; rhythm</h2>{{LIST: /metronome-practice/ /bpm/ /how-to-use-metronome /rhythm-training /subdivision-practice /metronome-meaning}}<h2>By instrument</h2>{{LIST: /drum-metronome/ /guitar-metronome /bass-metronome /piano-metronome /strings-metronome /winds-metronome /vocal-metronome /percussion-metronome /dance-metronome}}<h2>By feature</h2>{{LIST: /bpm-metronome /time-signature-metronome /mixed-meter-metronome /setlist-metronome /voice-count-metronome /drum-machine-app /swing-shuffle-metronome /click-sound-metronome /tempo-trainer}}<h2>By situation</h2>{{LIST: /band-worship-metronome/ /live-stage-metronome /worship-team-metronome /lesson-exam-metronome /busking-recording-metronome /ensemble-metronome /hobby-band-metronome}}<h2>Free &amp; devices</h2>{{LIST: /free-metronome /no-subscription-metronome /iphone-metronome /android-metronome}}<h2>About TEMPO</h2>{{LIST: /about-tempo}}</nav>
+
+##### band-worship-metronome/
+TITLE: Metronome for Bands and Worship Teams | Managing setlists and BPM per song
+DESC: If the tempo drifts song after song in your band or worship team, start by writing down a BPM for every song. Setlist prep, running in-ear clicks and matching count-ins: how a whole team can use one metronome.
+CRUMB: Bands & worship teams
+---
+<p class="eyebrow">BAND &amp; WORSHIP GUIDE</p>
+<h1>A metronome for bands and worship teams,<br><em>one team, one beat.</em></h1>
+<section class="story"><p class="eyebrow">WHY DAILYDRUM TEMPO</p><h2>Rehearsal was great. On stage, the songs kept getting faster.</h2><p>Bands and worship teams need many people riding the same beat. If every song's BPM is set by feel, and nobody is sure who starts the next song or how, the tempo wobbles easily on stage.</p><p>DailyDrum teaches band drummers and church musicians one-on-one. We put per-song settings and a stage screen into TEMPO so a team can start and finish on the same beat.</p><ul><li>Save BPM, meter and count-in per song, share with the team as a file</li><li>Live: next song triggers the voice count-in, no ads</li><li>Playback voice cues for song sections (coming in 2.5.3)</li></ul>{{BRAND}}</section>
+
+<p class="lead">It was fine in rehearsal, but on stage the songs crept faster. When one song ends, it's awkward every time to decide who kicks off the next tempo and how. These are the scenes bands and worship teams run into most.</p>
+
+<h2>1. Start with a BPM for every song</h2>
+<p>Most team tempo problems begin with deciding "what tempo are we doing this one?" by feel, every time. Before practice, write down these four things for each song.</p>
+<ul>
+<li><strong>BPM</strong> · Based on the original, adjusted to your team's level and the mood</li>
+<li><strong>Time signature</strong> · 4/4, 6/8, 3/4 and so on</li>
+<li><strong>Subdivision</strong> · Does it feel like 8ths, 16ths or a shuffle?</li>
+<li><strong>Count-in</strong> · How many beats (or bars) before you come in</li>
+</ul>
+<p>For worship teams, simply noting this information whenever you receive the setlist cuts rehearsal time dramatically.</p>
+
+<h2>2. Save songs in setlist order</h2>
+<p>If you put songs in a list in the order of the show or service, you never have to re-enter BPMs when the song changes. When you play the same song next month, just load it again.</p>
+
+<h2>3. Who hears the click, and how</h2>
+<ul>
+<li><strong>Only the drummer:</strong> The most common setup. If the drummer stays steady, the whole team follows.</li>
+<li><strong>The whole team on in-ears:</strong> The most stable tempo, but check your monitor routing so the click never leaks into the house or congregation speakers.</li>
+<li><strong>Only the leader:</strong> The worship leader or bandleader hears the click and leads the team with a count.</li>
+</ul>
+
+<h2>4. Smooth transitions between songs</h2>
+<p>The shakiest moment is jumping straight into the next song's tempo after one ends. A spoken count-in for the next song lets everyone start on the same beat. If two songs with very different tempos follow each other, giving the count-in one extra bar also helps.</p>
+
+<div class="box"><h3>Managing team tempo with TEMPO</h3>
+<ul>
+<li><strong>List:</strong> Save BPM, time signature, subdivision and count-in per song, organized in folders. Send it as a file and teammates import it as a new list (no sign-up, not real-time sync).</li>
+<li><strong>Live:</strong> Move to the next song with large controls and your saved voice count-in gets you ready. Quick BPM fixes right on screen. The Live screen has no ads.</li>
+<li><strong>TEMPO ANCHOR:</strong> Re-locks the beat while keeping your chosen sound and downbeat accent.</li>
+<li><strong>Playback (coming in iOS 2.5.3):</strong> Save a song's sections, like Intro, Verse and Chorus, with their bar counts, and get a voice cue before the next part. It gives clicks and section cues; it does not play backing tracks.</li>
+</ul></div>
+
+<h2>Rehearsal checklist</h2>
+<ol>
+<li>Did you share each song's BPM, meter and count-in before rehearsal?</li>
+<li>Did you decide who hears the click and how (speaker or in-ear)?</li>
+<li>Did you check that the click doesn't leak to the audience or congregation?</li>
+<li>Did you run the transitions between songs with very different tempos on their own?</li>
+<li>Did you mark the songs that tend to speed up on stage (climaxes, endings)?</li>
+</ol>
+
+##### bpm/
+TITLE: What BPM Means and a Tempo Marking BPM Chart | Andante, Moderato, Allegro
+DESC: BPM means how many beats fit into one minute. Here is a chart of roughly how many BPM tempo markings like Andante, Moderato and Allegro mean, plus how to choose your practice BPM.
+CRUMB: BPM meaning & tempo chart
+---
+<p class="eyebrow">BPM GUIDE</p>
+<h1>What BPM means,<br><em>and a tempo marking chart.</em></h1>
+<section class="story"><p class="eyebrow">WHY DAILYDRUM TEMPO</p><h2>That '♩=120' above the score is where today's practice starts.</h2><p>If you don't know the BPM, you set your practice speed by feel, and feel changes with your mood that day. A tempo set by number connects yesterday's practice to today's.</p><p>At DailyDrum we explain BPM with numbers even to young children. We built TEMPO so anyone can measure, set and remember a BPM.</p><ul><li>TAP with your chosen sound to measure the original song's BPM</li><li>Save BPM per song to keep a record of practice speeds</li><li>Automator to move from practice BPM to target BPM</li></ul>{{BRAND}}</section>
+
+<p class="lead">The big number on a metronome screen and the ♩= 120 above a score say the same thing. Once you understand BPM, you can set the practice speed for any song yourself.</p>
+
+<h2>What is BPM?</h2>
+<p><strong>BPM (Beats Per Minute)</strong> is the number of beats in one minute. BPM 60 is one beat per second; BPM 120 is two beats per second. The number on your metronome is this BPM, and the higher it is, the faster it goes.</p>
+<p>If a score says <strong>♩ = 90</strong>, it means "a quarter note is one beat, 90 times per minute." Songs in 6/8 are sometimes marked with a dotted quarter, like ♩. = 60, so check which note value counts as one beat.</p>
+
+<h2>Tempo marking BPM chart</h2>
+<p>Tempo markings describe a feeling rather than an exact number, so ranges vary a little between sources. Below are commonly used approximate ranges.</p>
+<table class="tbl">
+<tr><th>Marking</th><th>Meaning</th><th>Approx. BPM</th></tr>
+<tr><td>Largo</td><td>Very slow and broad</td><td>40–60</td></tr>
+<tr><td>Larghetto</td><td>A little faster than largo</td><td>60–66</td></tr>
+<tr><td>Adagio</td><td>Slow</td><td>66–76</td></tr>
+<tr><td>Andante</td><td>At a walking pace</td><td>76–108</td></tr>
+<tr><td>Moderato</td><td>Moderate</td><td>108–120</td></tr>
+<tr><td>Allegro</td><td>Fast</td><td>120–156</td></tr>
+<tr><td>Vivace</td><td>Lively and fast</td><td>156–176</td></tr>
+<tr><td>Presto</td><td>Very fast</td><td>168–200</td></tr>
+<tr><td>Prestissimo</td><td>As fast as possible</td><td>200+</td></tr>
+</table>
+
+<h2>Common BPM by genre</h2>
+<p>Every song is different, but this helps you get a feel. <strong>Ballads</strong> often sit around 60–80, <strong>mid-tempo pop and worship</strong> 80–110, <strong>dance and up-tempo pop</strong> 110–130, <strong>rock</strong> 110–160, and <strong>punk and metal</strong> 160 and above. The best way to get the exact value is to measure it yourself while listening to the original.</p>
+
+<h2>How to choose your practice BPM</h2>
+<ol>
+<li>Find the original BPM. If you don't know it, tap the screen along with the beat (TAP) while listening to get a rough BPM.</li>
+<li>Check whether you can play it without mistakes at 60–70% of the original BPM.</li>
+<li>When you play it cleanly several times in a row, raise it by 2–5 BPM.</li>
+<li>Once you reach the original BPM, also try playing 5–10 faster. It gives you room to spare when nerves kick in on stage.</li>
+</ol>
+
+<div class="box"><h3>Working with BPM in TEMPO</h3>
+<ul>
+<li>Measure BPM by tapping with your chosen click sound (TAP).</li>
+<li>Save BPM, time signature and subdivision per song in List and load them instantly next time.</li>
+<li>Use the Automator to change the tempo from your practice BPM to your target BPM.</li>
+</ul></div>
+
+##### drum-metronome/
+TITLE: Using a Metronome for Drum Practice | A drummer's routine for getting along with the click
+DESC: For drum practice, a metronome isn't optional; it's fundamental. From making the click audible to 8-beat, fill and shuffle practice and using a drum machine: how drummers should use a metronome.
+CRUMB: Drum practice metronome
+---
+<p class="eyebrow">DRUM GUIDE</p>
+<h1>A metronome for drum practice,<br><em>making friends with the click.</em></h1>
+<section class="story"><p class="eyebrow">WHY DAILYDRUM TEMPO</p><h2>When the drummer wavers, the whole band wavers.</h2><p>A guitarist can slip a little and the song still moves on, but if the drums rush half a beat, everyone rushes with them. That's why, for drummers, the metronome is a fundamental skill, not an option. The problem is that the click is hard to hear over the drums.</p><p>DailyDrum is a drum school. We built TEMPO with a click you can clearly hear next to a kit, plus the subdivisions and grooves drummers need.</p><ul><li>Adjust sound, volume, pitch and length so it cuts through the drums</li><li>16th and triplet subdivisions, click on 2 and 4</li><li>4-track drum machine with shuffle, jazz and bossa nova presets</li></ul>{{BRAND}}</section>
+
+<p class="lead">The drummer is the band's clock. If the guitar wobbles a bit, the song goes on; if the drums wobble, everyone does. That's why a metronome should always be part of drum practice.</p>
+
+<h2>First, make the click audible</h2>
+<p>Drums are loud, and a click from a phone speaker gets buried fast.</p>
+<ul>
+<li><strong>Use earphones or headphones:</strong> With isolating earphones or headphones the click is clear even at low volume. It's good hearing protection, too.</li>
+<li><strong>Choose the sound:</strong> Pick a tone that doesn't disappear under cymbals and snare. Some people hear a sharp digital sound best; others prefer something softer.</li>
+<li><strong>Accent the first beat:</strong> Give beat one a different sound or more volume so you never lose your place in the bar.</li>
+</ul>
+
+<h2>Step-by-step metronome practice for drums</h2>
+<h3>1. Basic 8-beat groove</h3>
+<p>Start at BPM 70–80 with 8th notes on the hi-hat, snare on 2 and 4, and kick on 1 and 3. If the click seems to "disappear" behind the hi-hat, you're right on it.</p>
+<h3>2. Sharpen accuracy with 16th subdivisions</h3>
+<p>For 16-beat grooves and fast kick patterns, practice with the 16th-note subdivision on. With the space between beats filled in, you hear right away where you're pulling ahead.</p>
+<h3>3. Landing on beat one after a fill</h3>
+<p>Fills are where drummers rush the most. Repeat "3 bars of groove + 1 bar of fill," and check that the crash and kick on the first beat after the fill land exactly with the click.</p>
+<h3>4. Click only on 2 and 4</h3>
+<p>Once you're comfortable, make the click sound only on beats 2 and 4. Playing the snare right on the click improves your backbeat feel, and you fill in 1 and 3 yourself.</p>
+<h3>5. Shuffle and swing</h3>
+<p>Practicing shuffle with a triplet subdivision click locks in the spacing between the first and third notes. For swing feel, practice with a drum machine whose swing amount you can adjust, and your ear picks it up quickly.</p>
+
+<div class="box"><h3>How to use TEMPO for drum practice</h3>
+<ul>
+<li>Digital · Gentle · Acoustic sounds with volume, pitch and length controls, for a click you can hear inside the drum sound</li>
+<li>Per-beat accent and mute to emphasize beat one or click only on 2 and 4</li>
+<li>4-track drum machine (kick, snare, hi-hat, ride): 16th/triplet grid, 16th swing, shuffle, jazz and bossa nova presets</li>
+<li>Save BPM and subdivision for each practice song in List, and use the Automator to push up to your target BPM</li>
+</ul>
+<p>To open the drum machine, tap the DailyDrum logo on the Tempo tab 8 times quickly.</p></div>
+
+<h2>What we often tell our drum students</h2>
+<p>"<strong>Playing evenly</strong> comes before playing fast." A groove that doesn't waver at slow tempos is the shortest path to playing fast songs. If you write the BPM in your practice log each day, a month later you'll see in numbers how far you've come.</p>
+
+##### metronome-app/
+TITLE: Choosing a Metronome App | 7 things to check before you pick one
+DESC: If comparing metronome apps is confusing, look at your own practice situation before the number of features. Seven things to check before choosing an app, and how apps differ from mechanical, electronic and web metronomes.
+CRUMB: Choosing a metronome app
+---
+<p class="eyebrow">METRONOME GUIDE</p>
+<h1>Choosing a metronome app,<br><em>7 things to check first.</em></h1>
+<section class="story"><p class="eyebrow">WHY DAILYDRUM TEMPO</p><h2>A 4.8-star metronome app. So why did you delete it after a week?</h2><p>You downloaded a top-ranked metronome, but ads popped up while you played, you had to reset the BPM for every song, and on stage the buttons were too small. Having many features and fitting your practice are two different things.</p><p>DailyDrum watches students practice up close every day. So we built TEMPO aiming for "a metronome you open every day" rather than "lots of features."</p><ul><li>BPM, time signature, subdivision and count-in saved per song, so you practice the moment you open it</li><li>No ads on the playing screens (Live, Playback)</li><li>A one-time purchase, not a subscription, and the free version is enough to perform</li></ul>{{BRAND}}</section>
+
+<p class="lead">Search "metronome" in an app store and similar-looking apps go on forever. Before the star rating, ask: "Where am I turning on the click, and what for?"</p>
+
+<h2>First, metronome types compared</h2>
+<table class="tbl">
+<tr><th>Type</th><th>Strengths</th><th>Drawbacks</th></tr>
+<tr><td><strong>Mechanical (wind-up) metronome</strong></td><td>Intuitive, you can see the weight swing; no battery needed</td><td>Hard to set meters, subdivisions or accents; no per-song saving</td></tr>
+<tr><td><strong>Electronic metronome device</strong></td><td>Solid physical buttons, easy earphone connection</td><td>Another device to carry; limited song-list management</td></tr>
+<tr><td><strong>Web / search-bar metronome</strong></td><td>Opens instantly, nothing to install</td><td>No saving or setlists; awkward when the screen turns off</td></tr>
+<tr><td><strong>Metronome app</strong></td><td>Per-song BPM, meters, subdivisions, accents and practice tools on one phone</td><td>Ad placement and paid features vary widely between apps</td></tr>
+</table>
+<p>If you practice daily and also rehearse or perform, an app ends up being the most practical. So what should you compare between apps?</p>
+
+<h2>7 things to check when choosing a metronome app</h2>
+<h3>1. Is the click clear to your ears?</h3>
+<p>A click that gets buried under the drums is useless. Check whether you can change the sound and adjust the downbeat accent separately.</p>
+<h3>2. Are time signatures and subdivisions flexible?</h3>
+<p>An app that only does 4/4 hits its limit fast. Look for meters like 3/4 and 6/8, 8th, 16th and triplet subdivisions, and per-beat accent or mute.</p>
+<h3>3. Can you save a BPM for each song?</h3>
+<p>As your song list grows, re-setting the BPM every time becomes the biggest hassle. A list that saves song names with BPM and meter gets you practicing faster.</p>
+<h3>4. Can you use it on stage?</h3>
+<p>During a show there's no time to hunt for tiny buttons. Check for a setlist you can step through in order, large controls and a count-in.</p>
+<h3>5. Are there tools for pushing your tempo up?</h3>
+<p>A feature that raises the tempo gradually from slow to your target BPM means you don't have to remember "where did I get to today?"</p>
+<h3>6. Where do the ads appear?</h3>
+<p>Most free apps have ads. What matters is where. Make sure ads don't cover the screen you look at while playing.</p>
+<h3>7. Is the paid upgrade a subscription or a one-time purchase?</h3>
+<p>A metronome is a tool you use for years, so a monthly subscription versus a one-time purchase makes a big difference in total cost.</p>
+
+<div class="box"><h3>How TEMPO measures up</h3>
+<ul>
+<li>Digital · Gentle · Acoustic click sounds, with volume, pitch, length and per-beat accent/mute</li>
+<li>BPM, time signature, subdivision and count-in saved per song in List, organized in folders and shared as a file</li>
+<li>Live screen for the stage: large controls, voice count-in when you move to the next song</li>
+<li>Automator (changes tempo toward a target BPM) and Tracker (moves to the next song after set bars or time)</li>
+<li>4-track drum machine: 16th/triplet grid, swing, shuffle, jazz and bossa nova presets</li>
+<li>Ads only in the banner areas of Tempo and List; no ads in Live and Playback</li>
+<li>TEMPO PRO is a one-time purchase, not a subscription (see the App Store for the price)</li>
+</ul>
+<p>Voice cues for song sections (Intro, Verse, Chorus) and Playback's option to switch only some 4/4 bars to 2/4 are coming in the iOS 2.5.3 update, available after App Store review.</p></div>
+
+<h2>Bottom line: how to choose</h2>
+<p><strong>If you only practice alone,</strong> an app with clear sounds, subdivisions and accents is enough. <strong>For lessons or exam prep,</strong> look for per-song saving and tempo-increase tools. <strong>For bands, gigs and worship teams,</strong> choose an app with setlists, a big screen and count-ins. Either way, the surest comparison is to try it free first and spend one week checking whether it fits your practice habits.</p>
+
+##### metronome-practice/
+TITLE: How to Practice with a Metronome | A 5-step routine for when you rush
+DESC: If you're in time alone but rush as soon as you play with others, change how you use the metronome. A 5-step metronome practice routine to fix shaky timing and build a better sense of rhythm.
+CRUMB: Metronome practice method
+---
+<p class="eyebrow">PRACTICE GUIDE</p>
+<h1>Practicing with a metronome,<br><em>for when you rush.</em></h1>
+<section class="story"><p class="eyebrow">WHY DAILYDRUM TEMPO</p><h2>In time when you play alone, rushing as soon as the band comes in.</h2><p>With the click on, you're in time; with it off, you drift. It's not that you haven't practiced. It's that you've only practiced "following" the click. The ability to create the beat yourself only comes from changing how you practice.</p><p>DailyDrum, a one-on-one drum studio, has worked through this problem with many students whose timing wavered. We put that practice sequence into TEMPO so you can follow it on your own.</p><ul><li>Automator: from a BPM where you make no mistakes to your target BPM</li><li>Per-beat accent and mute so you fill the empty beats yourself</li><li>Per-song saving so yesterday's practice continues today</li></ul>{{BRAND}}</section>
+
+<p class="lead">"I'm in time with the metronome on, but when I turn it off I speed up." It's the most common worry. Usually it isn't a lack of rhythm; it's having only practiced leaning on the click.</p>
+
+<h2>Why do we rush?</h2>
+<ul>
+<li><strong>Rushing into hard spots:</strong> Right before a fill, a chord change or a fast passage, your body leans forward first.</li>
+<li><strong>Counting rests short:</strong> You can't wait through the silence and pull the next note early.</li>
+<li><strong>Nerves and excitement:</strong> When your heart rate climbs in rehearsal or on stage, the tempo climbs with it.</li>
+<li><strong>Only "following" the click:</strong> You can match it when it's there, but your ability to create the beat yourself is weak.</li>
+</ul>
+
+<h2>A 5-step metronome practice routine</h2>
+<h3>Step 1. Start at a tempo where you make no mistakes</h3>
+<p>Start not at your target BPM but at <strong>a BPM you can play without a single mistake</strong>. Usually 60–70% of the target is right. Playing slow tempos accurately is the foundation of fast tempos.</p>
+<h3>Step 2. Raise it little by little after consistent success</h3>
+<p>Once you've played the same passage cleanly 3–4 times in a row, raise the BPM by only 2–5. Big jumps lock in mistakes. If you start making errors, it's fine to step back down.</p>
+<h3>Step 3. Hear the beat subdivided</h3>
+<p>With only a quarter-note click, the space between beats is empty and you drift. Turn on the 8th or 16th subdivision and listen with the gaps filled in. For songs in triplets, practice with the triplet subdivision.</p>
+<h3>Step 4. Reduce the click and create the beat yourself</h3>
+<p>Once you're comfortable, deliberately thin out the click. Let it sound only on 2 and 4, or just once per bar. Because you have to fill the empty beats yourself, your internal sense of time grows.</p>
+<h3>Step 5. Record and check</h3>
+<p>It may feel right while you play, but a recording tells a different story. Record even a short take, find where you pull ahead, and go back to step 1 for just that passage.</p>
+
+<div class="box"><h3>Doing this routine with TEMPO</h3>
+<ul>
+<li><strong>Step 2:</strong> The Automator can change the tempo toward your target BPM automatically.</li>
+<li><strong>Step 3:</strong> Save the subdivision for each song so you don't have to set it again every time.</li>
+<li><strong>Step 4:</strong> Per-beat accent and mute let the click sound only on the beats you choose.</li>
+<li><strong>Practicing several songs:</strong> The Tracker moves to the next song after the bars or time you set.</li>
+</ul></div>
+
+<h2>FAQ</h2>
+<h3>How long should I use a metronome each day?</h3>
+<p>It's more effective to focus the click on <strong>passages you're learning and passages that feel shaky</strong> than to keep it on for your whole practice. Repeating short passages accurately improves you faster than running through the whole song with a click.</p>
+<h3>Can someone with "no rhythm" really improve?</h3>
+<p>Most of the time, they just never learned how to "feel" the beat. Slow tempos, listening to subdivisions and counting the beat with your body (tapping your foot, counting out loud) make a visible difference if you keep at it.</p>
+<h3>Should I listen through earphones?</h3>
+<p>With loud instruments like drums, you need earphones or headphones to hear the click accurately. To protect your hearing, raise the click volume only as much as you need.</p>
