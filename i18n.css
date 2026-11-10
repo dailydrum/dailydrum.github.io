@@ -1,0 +1,27 @@
+/* 언어 전환 메뉴 · 다국어 보정 (i18n-src/build.py) */
+nav{align-items:center}
+.lang{position:relative}
+.lang summary{list-style:none;display:flex;align-items:center;gap:6px;cursor:pointer;padding:7px 12px;border:1px solid var(--line);border-radius:999px;font-size:14px;white-space:nowrap}
+.lang summary::-webkit-details-marker{display:none}
+.lang summary:hover,.lang[open] summary{border-color:var(--accent);color:var(--accent)}
+.lang summary:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+.lang-menu{position:absolute;inset-inline-end:0;top:calc(100% + 10px);z-index:20;display:grid;grid-template-columns:repeat(2,minmax(130px,1fr));gap:2px;padding:10px;background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.5);max-height:min(70vh,560px);overflow-y:auto;width:max-content}
+.lang-menu a{padding:9px 12px;border-radius:10px;font-size:14px;white-space:nowrap}
+.lang-menu a:hover{background:#25262a;color:var(--ink)}
+.lang-menu a[aria-current]{color:var(--accent);font-weight:700}
+.lang-suggest{display:flex;justify-content:center;align-items:center;gap:14px;padding:10px 16px;background:var(--accent);color:#fff;font-size:15px;font-weight:600}
+.lang-suggest button{background:none;border:0;color:#fff;font-size:22px;line-height:1;cursor:pointer;padding:0 4px}
+:lang(ja) h1,:lang(ja) h2,:lang(ja) h3,:lang(zh-Hans) h1,:lang(zh-Hant) h1{word-break:normal;line-break:strict}
+:lang(th) h1,:lang(hi) h1,:lang(bn) h1,:lang(ar) h1,:lang(he) h1{line-height:1.35;letter-spacing:0}
+h1,h2,h3{overflow-wrap:break-word;hyphens:auto}
+[dir=rtl] .feature-copy ul{padding-left:0;padding-right:20px}
+[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3{letter-spacing:0}
+@media(max-width:640px){
+  nav a[href="#changes"]{display:none}
+  .lang summary span{display:none}
+  .lang summary{padding:7px 9px}
+  .lang-menu{grid-template-columns:repeat(2,minmax(120px,1fr));position:fixed;top:76px;inset-inline:16px;width:auto}
+  .hero h1{font-size:clamp(38px,11vw,58px)}
+}
+[dir=rtl] .eyebrow{direction:ltr;text-align:right}
+.feature>*,.feature-grid>*,.updates>*,.hero>*,.download>*{min-width:0}.feature-copy,.card-copy,.updates li{overflow-wrap:anywhere}
