@@ -21,7 +21,7 @@
     root.TempoStoreRoute = api;
     const target = destination({userAgent:navigator.userAgent,platform:navigator.platform,maxTouchPoints:navigator.maxTouchPoints,search:location.search});
     if (target) {
-      document.getElementById('status').textContent = '스토어로 이동합니다.';
+      // Keep the selected language's download label during the existing redirect.
       location.replace(target);
     }
   }
