@@ -23,7 +23,10 @@
     document.querySelector('.brand').href = 'https://tempo.dailydrum.co.kr/' + (key === 'ko' ? '' : key + '/');
     select.value = key;
   }
-  apply(params.get('lang') || saved || 'en');
+  // The English TEMPO Instagram bio uses this specific entry link.
+  const englishBio = params.get('utm_source') === 'ig' &&
+    params.get('utm_medium') === 'social' && params.get('utm_content') === 'link_in_bio';
+  apply(params.get('lang') || (englishBio ? 'en' : saved) || 'en');
   select.addEventListener('change', function () {
     apply(select.value);
     try { localStorage.setItem('tempo-download-language', select.value); } catch (_) {}
